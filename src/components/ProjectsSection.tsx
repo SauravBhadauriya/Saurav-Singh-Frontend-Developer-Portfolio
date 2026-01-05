@@ -35,7 +35,7 @@ const projects = [
       "Shadcn UI",
       "Redux Toolkit",
     ],
-    link: "https://www.usamedpremium.com/#gref",
+    link: "https://software-innovation.vercel.app/",
   },
   {
     title: "Possible Money",
@@ -58,7 +58,7 @@ const projects = [
       "Formik",
       "Redux Toolkit",
     ],
-    link: "https://drift-frontend-qa.appskeeper.in/login",
+    link: "https://github.com/SauravBhadauriya/Possible-Money",
   },
 ];
 
