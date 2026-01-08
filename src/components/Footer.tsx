@@ -56,8 +56,8 @@ export default function Footer() {
         </div>
         
         <div className="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-slate-400 mb-4 md:mb-0">© {currentYear} Saurav Singh. All rights reserved.</p>
           <p className="text-slate-400 mb-4 md:mb-0"> I hereby declare that the above information provided is true to the best of my knowledge.</p>
+          <p className="text-slate-400 mb-4 md:mb-0">© {currentYear} Saurav Singh. All rights reserved.</p>
           
         </div>
       </div>
