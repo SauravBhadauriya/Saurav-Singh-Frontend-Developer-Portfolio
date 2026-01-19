@@ -15,16 +15,16 @@ import {
 
 const projects = [
   {
-    title: "Software-Innovation",
-    period: "Jan 2025 - Present",
+    title: "Software Innovation",
+    period: "Jan 2025 – Present",
     description:
-      "A comprehensive patient management system with robust features for managing patient records, appointments, and medical histories.",
+      "Frontend-focused patient management system for managing patient records, appointments, and medical history.",
     contributions: [
-      "Developed using Next.js 14, Tailwind CSS, and TypeScript",
-      "Implemented React Hook Form and Zod for form validation",
-      "Utilized Shadcn UI for modern UI components",
-      "Employed Redux Toolkit and Redux Persist for state management",
-      "Led a team of 3 developers, coordinating tasks and setting milestones",
+      "Developed responsive frontend using Next.js 14, TypeScript, and Tailwind CSS",
+      "Implemented form handling and validation using React Hook Form and Zod",
+      "Created reusable UI components using shadcn/ui",
+      "Managed global state using Redux Toolkit and Redux Persist",
+      "Collaborated with a 3-member team to plan features and track milestones",
     ],
     technologies: [
       "Next.js 14",
@@ -32,35 +32,57 @@ const projects = [
       "Tailwind CSS",
       "React Hook Form",
       "Zod",
-      "Shadcn UI",
+      "shadcn/ui",
       "Redux Toolkit",
     ],
-    link: "https://software-innovation.vercel.app/",
+    github: "https://github.com/SauravBhadauriya/Software-Innovation",
+    liveDemo: "https://software-innovation.vercel.app/",
   },
   {
     title: "Possible Money",
-    period: "Aug 2025 - Aug 2025",
+    period: "Aug 2025",
     description:
-      "Possible Money is a digital loan application platform designed to streamline the process of applying for and managing loans.",
+      "A digital loan application platform designed to simplify loan discovery and application workflows.",
     contributions: [
-      "Leveraged AI tools to speed up front-end development by 30%",
-      "Integrated AI-assisted debugging into daily workflows",
-      "Used AI for rapid prototyping and UI/UX suggestions",
-      "Built using React 19, Tailwind CSS, and JavaScript",
-      "Implemented React Hook Form and Formik",
-      "Used Redux Toolkit and Redux Persist",
+      "Developed responsive UI using React and Tailwind CSS",
+      "Accelerated frontend development by ~30% using AI-assisted coding and debugging tools",
+      "Implemented form handling using React Hook Form and Formik",
+      "Managed client-side state using Redux Toolkit and Redux Persist",
     ],
     technologies: [
-      "React 19",
+      "React",
       "JavaScript",
       "Tailwind CSS",
       "React Hook Form",
       "Formik",
       "Redux Toolkit",
     ],
-    link: "https://github.com/SauravBhadauriya/Possible-Money",
+    github: "https://github.com/SauravBhadauriya/Possible-Money",
+
   },
-];
+
+  {
+    title: "Cinewood",
+    period: "Nov 2024",
+    description:
+      "A movie browsing web application that displays dynamic content with a responsive and accessible UI.",
+    contributions: [
+      "Built a responsive web application using Next.js",
+      "Rendered dynamic content using structured local JSON data",
+      "Ensured accessibility, responsive design, and cross-browser compatibility",
+    ],
+    technologies: [
+      "Next.js",
+      "Tailwind CSS",
+      "shadcn/ui",
+      "Lucide Icons",
+    ],
+    github: "https://github.com/SauravBhadauriya/Cinewood",
+    liveDemo: null,
+  },
+
+]
+
 
 export default function ProjectsSection() {
   // ✅ Hooks must be HERE
@@ -154,13 +176,32 @@ export default function ProjectsSection() {
                         </div>
                       </CardContent>
 
-                      <CardFooter>
-                        <Link to={project.link}>
-                          <Button className="bg-sky-500 hover:bg-sky-600 text-white">
-                            View Project Details
-                          </Button>
-                        </Link>
-                      </CardFooter>
+                      <CardFooter className="flex gap-3 flex-wrap">
+  {project.github && (
+    <a
+      href={project.github}
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <Button variant="outline">
+        GitHub
+      </Button>
+    </a>
+  )}
+
+  {project.liveDemo && (
+    <a
+      href={project.liveDemo}
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <Button className="bg-sky-500 hover:bg-sky-600 text-white">
+        Live Demo
+      </Button>
+    </a>
+  )}
+</CardFooter>
+
                     </Card>
                   </motion.div>
                 </CarouselItem>
