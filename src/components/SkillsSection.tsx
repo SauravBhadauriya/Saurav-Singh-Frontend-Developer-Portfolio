@@ -6,6 +6,7 @@ import { RevealOnScroll, ZoomIn } from "./RevealAnimation";
 import { motion } from "framer-motion";
 
 const skillCategories = [
+ 
   {
     title: "Frontend Technologies",
     skills: ["React", "Next.js", "TypeScript", "JavaScript", "HTML5", "CSS3", "Tailwind CSS"]
