@@ -9,19 +9,25 @@ const skillCategories = [
  
   {
     title: "Frontend Technologies",
-    skills: ["React", "Next.js", "TypeScript", "JavaScript", "HTML5", "CSS3", "Tailwind CSS"]
+    skills: ["React", "Next.js", "TypeScript", "JavaScript", "HTML5", "CSS3"]
   },
   {
     title: "State Management",
-    skills: ["Redux Toolkit", "Redux Persist", "Context API"]
+    // skills: ["Redux Toolkit", "Redux Persist", "Context API"]
+    skills: ["React Context API"]
   },
   {
     title: "UI Frameworks",
-    skills: ["Material UI", "Shadcn UI", "Bootstrap"]
+    // skills: ["Material UI", "Shadcn UI", "Bootstrap"]
+    skills: ["Tailwind CSS", "Shadcn UI", "Bootstrap"]
   },
+  // {
+  //   title: "Tools & Practices",
+  //   skills: ["GitLab", "Redux DevTools", "Detailed SEO Extension", "Agile (Kanban, Scrum)", "ClickUp"]
+  // },
   {
-    title: "Tools & Practices",
-    skills: ["GitLab", "Redux DevTools", "Detailed SEO Extension", "Agile (Kanban, Scrum)", "ClickUp"]
+    title: "Routing",
+    skills: ["React", "Router", "Next.js", "File-based Routing"]
   },
 ];
 

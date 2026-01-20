@@ -35,7 +35,7 @@ const projects = [
       "shadcn/ui",
       "Redux Toolkit",
     ],
-    github: "https://github.com/SauravBhadauriya/Software-Innovation",
+    github: "https://github.com/SauravBhadauriya/Software-Innovation.git",
     liveDemo: "https://software-innovation.vercel.app/",
   },
   {
@@ -57,7 +57,7 @@ const projects = [
       "Formik",
       "Redux Toolkit",
     ],
-    github: "https://github.com/SauravBhadauriya/Possible-Money",
+    github: "https://github.com/SauravBhadauriya/Possible-Money.git",
 
   },
 
@@ -77,7 +77,7 @@ const projects = [
       "shadcn/ui",
       "Lucide Icons",
     ],
-    github: "https://github.com/SauravBhadauriya/Cinewood",
+    github: "https://github.com/SauravBhadauriya/Cinewood.git",
     liveDemo: null,
   },
 
