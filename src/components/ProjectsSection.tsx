@@ -18,7 +18,7 @@ const projects = [
     title: "Software Innovation",
     period: "Jan 2025 – Present",
     description:
-      "Frontend-focused patient management system for managing patient records, appointments, and medical history.",
+      "This is a modern, responsive landing page built to showcase software development and innovation services. The design focuses on clarity, usability, and strong visual hierarchy to make key information easy to find. Built with React and modern frontend tools, it demonstrates my ability to translate UI design into a polished, user-friendly web experience.",
     contributions: [
       "Developed responsive frontend using Next.js 14, TypeScript, and Tailwind CSS",
       "Implemented form handling and validation using React Hook Form and Zod",
