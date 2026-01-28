@@ -18,7 +18,7 @@ const projects = [
     title: "Software Innovation",
     period: "Jan 2025 – Present",
     description:
-      "This is a modern, responsive landing page built to showcase software development and innovation services. The design focuses on clarity, usability, and strong visual hierarchy to make key information easy to find. Built with React and modern frontend tools, it demonstrates my ability to translate UI design into a polished, user-friendly web experience.",
+"A modern, responsive business website built using Next.js to showcase software development and innovation services. The website focuses on clean UI, structured content, and fast performance, providing a smooth experience across all devices. It demonstrates my ability to build professional, production-ready interfaces using modern frontend tools.",
     contributions: [
       "Developed responsive frontend using Next.js 14, TypeScript, and Tailwind CSS",
       "Implemented form handling and validation using React Hook Form and Zod",
