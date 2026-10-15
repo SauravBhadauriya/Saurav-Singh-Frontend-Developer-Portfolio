@@ -35,7 +35,7 @@ export default function ContactSection() {
                       <MapPin className="h-6 w-6 text-sky-600" />
                     </div>
                     <h4 className="font-medium text-lg mb-2">Location</h4>
-                    <p className="text-slate-600">Bareilly, Uttar Pradesh, India</p>
+                    <p className="text-slate-600">New Delhi, Delhi - 110016</p>
                   </motion.div>
                   
                   <motion.div 
@@ -48,7 +48,7 @@ export default function ContactSection() {
                     </div>
                     <h4 className="font-medium text-lg mb-2">Phone</h4>
                     <p className="text-slate-600">
-                      <a href="tel:9058949485" className="hover:text-sky-600 transition-colors">
+                      <a href="tel:+919058949485" className="hover:text-sky-600 transition-colors">
                         +91 9058949485
                       </a>
                     </p>

@@ -4,7 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { RevealOnScroll } from "./RevealAnimation";
-import { Link } from "react-router-dom";
+import { ExternalLink, ShoppingBag } from "lucide-react";
 import {
   Carousel,
   CarouselContent,
@@ -15,73 +15,66 @@ import {
 
 const projects = [
   {
-    title: "Software Innovation",
-    period: "Jan 2025 – Present",
+    title: "E-Commerce Storefronts",
+    period: "14+ Shopify Stores",
     description:
-"A modern, responsive business website built using Next.js to showcase software development and innovation services. The website focuses on clean UI, structured content, and fast performance, providing a smooth experience across all devices. It demonstrates my ability to build professional, production-ready interfaces using modern frontend tools.",
+      "Shopify storefront builds and customizations for fashion, jewellery, beauty, wellness, and D2C brands, covering responsive UI, product presentation, and SEO/schema markup.",
     contributions: [
-      "Developed responsive frontend using Next.js 14, TypeScript, and Tailwind CSS",
-      "Implemented form handling and validation using React Hook Form and Zod",
-      "Created reusable UI components using shadcn/ui",
-      "Managed global state using Redux Toolkit and Redux Persist",
-      "Collaborated with a 3-member team to plan features and track milestones",
+      "Built and customized Shopify storefronts using Liquid and theme customization (Impulse & Minimog themes)",
+      "Integrated Fastrr COD/RTO, Meta Pixel, and Wigzo to support commerce and marketing workflows",
+      "Implemented Product, LocalBusiness, and FAQPage structured data to improve SEO and AI search visibility",
+      "Delivered responsive product pages, collection pages, and product discovery experiences",
     ],
-    technologies: [
-      "Next.js 14",
-      "TypeScript",
-      "Tailwind CSS",
-      "React Hook Form",
-      "Zod",
-      "shadcn/ui",
-      "Redux Toolkit",
-    ],
-    github: "https://github.com/SauravBhadauriya/Software-Innovation.git",
-    liveDemo: "https://software-innovation.vercel.app/",
+    technologies: ["Shopify", "Liquid", "Theme Customization", "Responsive UI", "SEO/Schema Markup"],
+    links: [],
   },
   {
-    title: "Possible Money",
-    period: "Aug 2025",
+    title: "KL University Website",
+    period: null,
     description:
-      "A digital loan application platform designed to simplify loan discovery and application workflows.",
+      "The university website built with Next.js, presenting academic programs, admissions information, and institutional content.",
     contributions: [
-      "Developed responsive UI using React and Tailwind CSS",
-      "Accelerated frontend development by ~30% using AI-assisted coding and debugging tools",
-      "Implemented form handling using React Hook Form and Formik",
-      "Managed client-side state using Redux Toolkit and Redux Persist",
+      "Worked on the university website built with Next.js, supporting the presentation of academic programs, admissions information, and institutional content",
+      "Contributed to frontend page development and responsive UI improvements to help users navigate university information across devices",
     ],
-    technologies: [
-      "React",
-      "JavaScript",
-      "Tailwind CSS",
-      "React Hook Form",
-      "Formik",
-      "Redux Toolkit",
-    ],
-    github: "https://github.com/SauravBhadauriya/Possible-Money.git",
-
+    technologies: ["Next.js", "React.js", "JavaScript", "HTML", "CSS"],
+    links: [{ label: "Live Site", href: "https://www.kluniversity.in/" }],
   },
-
   {
-    title: "Cinewood",
-    period: "Nov 2024",
+    title: "RewardsPlus Android App",
+    period: "Android",
     description:
-      "A movie browsing web application that displays dynamic content with a responsive and accessible UI.",
+      "RewardsPlus mobile app listed on Google Play, supporting the company's digital customer and rewards experience.",
     contributions: [
-      "Built a responsive web application using Next.js",
-      "Rendered dynamic content using structured local JSON data",
-      "Ensured accessibility, responsive design, and cross-browser compatibility",
+      "Contributed to frontend development and maintenance as part of work on the RewardsPlus platform",
+      "Supported the company's digital customer and rewards experience on Android",
     ],
-    technologies: [
-      "Next.js",
-      "Tailwind CSS",
-      "shadcn/ui",
-      "Lucide Icons",
+    technologies: ["Android", "Mobile App", "Frontend"],
+    links: [
+      {
+        label: "Google Play",
+        href: "https://play.google.com/store/apps/details?id=com.wtm.rewardsplus.rewards.more",
+      },
     ],
-    github: "https://github.com/SauravBhadauriya/Cinewood.git",
-    liveDemo: null,
   },
+];
 
-]
+const storefronts = [
+  { name: "zevar by Geeta", href: "https://zevarbygeeta.com", label: "zevarbygeeta.com", description: "Built and customized the Shopify storefront and integrated Fastrr COD/RTO, Meta Pixel, and Wigzo." },
+  { name: "Lizpaul", href: "https://lizpaul.in", label: "lizpaul.in", description: "Developed the storefront and worked on Product, LocalBusiness, and FAQPage structured data and AI search visibility." },
+  { name: "Amayra Jewellery", href: "https://amayrajewellery.com", label: "amayrajewellery.com", description: "Developed and customized the online jewellery storefront and its product collections." },
+  { name: "The Koe Beauty", href: "https://thekoebeauty.com", label: "thekoebeauty.com", description: "Built and customized the Shopify storefront for a beauty brand, focused on responsive product browsing." },
+  { name: "Kelby Huston", href: "https://kelbyhuston.com", label: "kelbyhuston.com", description: "Developed the Shopify storefront and customized the shopping experience across key store pages." },
+  { name: "Canadian Pine Pollen", href: "https://canadianpinepollen.com", label: "canadianpinepollen.com", description: "Worked on the storefront and its product-focused shopping pages." },
+  { name: "Nature's Soul Shop / Miri Kiri", href: "https://naturessoulshop.com/collections/miri-kiri", label: "Miri Kiri collection", description: "Worked on the collection page and product discovery experience." },
+  { name: "Amiraah India", href: "https://amiraahindia.com", label: "amiraahindia.com", description: "Worked on the storefront and a consistent product presentation across the website." },
+  { name: "Healix Scrubs", href: "https://healixscrubs.com", label: "healixscrubs.com", description: "Worked on the online storefront for medical apparel, focused on product browsing." },
+  { name: "Samatvam", href: "https://samatvam.in", label: "samatvam.in", description: "Worked on the e-commerce website and its product-focused pages." },
+  { name: "Aashima Behl", href: "https://www.aashimabehl.com", label: "aashimabehl.com", description: "Worked on the fashion storefront and product presentation across store pages." },
+  { name: "Kalista Studio", href: "https://kalistastudio.in/pages/terms-and-conditions", label: "Terms and Conditions page", description: "Worked on the terms and conditions page and its integration with the storefront." },
+  { name: "NeverOwned", href: "https://neverowned.in", label: "neverowned.in", description: "Worked on an e-commerce marketplace for open-box products and its browsing experience." },
+  { name: "Knick Knack", href: "https://knickknack.online", label: "knickknack.online", description: "Worked on the online shopping storefront, website customization, and product discovery." },
+];
 
 
 export default function ProjectsSection() {
@@ -100,7 +93,7 @@ export default function ProjectsSection() {
   }, [api, isHovered]);
 
   return (
-    <section id="projects" className="py-20 min-h-screen flex items-center relative">
+    <section id="projects" className="py-20 min-h-screen flex items-center relative overflow-hidden">
       {/* Background */}
       <div
         className="absolute inset-0 -z-10"
@@ -119,7 +112,7 @@ export default function ProjectsSection() {
           <RevealOnScroll>
             <h2 className="section-heading text-white">Featured Projects</h2>
             <p className="text-slate-300 max-w-2xl mx-auto">
-              A selection of my recent work and contributions to impactful projects.
+              Shopify storefronts, web platforms, and mobile apps I have built and contributed to.
             </p>
           </RevealOnScroll>
         </div>
@@ -148,9 +141,11 @@ export default function ProjectsSection() {
                           <CardTitle className="text-2xl font-bold text-slate-800">
                             {project.title}
                           </CardTitle>
-                          <Badge variant="outline" className="bg-sky-50 text-sky-600">
-                            {project.period}
-                          </Badge>
+                          {project.period && (
+                            <Badge variant="outline" className="bg-sky-50 text-sky-600">
+                              {project.period}
+                            </Badge>
+                          )}
                         </div>
                         <CardDescription className="mt-2 text-slate-600">
                           {project.description}
@@ -176,31 +171,22 @@ export default function ProjectsSection() {
                         </div>
                       </CardContent>
 
-                      <CardFooter className="flex gap-3 flex-wrap">
-  {project.github && (
-    <a
-      href={project.github}
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      <Button variant="outline">
-        GitHub
-      </Button>
-    </a>
-  )}
-
-  {project.liveDemo && (
-    <a
-      href={project.liveDemo}
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      <Button className="bg-sky-500 hover:bg-sky-600 text-white">
-        Live Demo
-      </Button>
-    </a>
-  )}
-</CardFooter>
+                      {project.links.length > 0 && (
+                        <CardFooter className="flex gap-3 flex-wrap">
+                          {project.links.map((link) => (
+                            <a
+                              key={link.href}
+                              href={link.href}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                            >
+                              <Button className="bg-sky-500 hover:bg-sky-600 text-white">
+                                {link.label} <ExternalLink className="ml-2 h-4 w-4" />
+                              </Button>
+                            </a>
+                          ))}
+                        </CardFooter>
+                      )}
 
                     </Card>
                   </motion.div>
@@ -211,6 +197,45 @@ export default function ProjectsSection() {
             <CarouselPrevious className="top-1/2 -translate-y-1/2 left-2 md:-left-12" />
             <CarouselNext className="top-1/2 -translate-y-1/2 right-2 md:-right-12" />
           </Carousel>
+        </div>
+
+        <div className="mt-16">
+          <RevealOnScroll>
+            <h3 className="text-2xl font-semibold mb-2 font-poppins text-white text-center">
+              Shopify Storefronts
+            </h3>
+            <p className="text-slate-400 text-center mb-8">
+              Shopify · Liquid · Theme Customization · Responsive UI · SEO/Schema Markup
+            </p>
+          </RevealOnScroll>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {storefronts.map((store, index) => (
+              <motion.a
+                key={store.name}
+                href={store.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group block rounded-lg bg-white/5 border border-white/10 p-5 hover:bg-white/10 hover:border-sky-400/40 transition-colors"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: 0.05 * (index % 6) }}
+                viewport={{ once: true }}
+                whileHover={{ y: -4 }}
+              >
+                <div className="flex items-center gap-3 mb-2">
+                  <div className="bg-sky-500/15 p-2 rounded-full">
+                    <ShoppingBag className="h-4 w-4 text-sky-400" />
+                  </div>
+                  <h4 className="font-semibold text-white">{store.name}</h4>
+                </div>
+                <p className="text-slate-400 text-sm mb-3">{store.description}</p>
+                <span className="text-sky-400 text-sm inline-flex items-center gap-1 group-hover:text-sky-300">
+                  {store.label} <ExternalLink className="h-3.5 w-3.5" />
+                </span>
+              </motion.a>
+            ))}
+          </div>
         </div>
       </div>
     </section>

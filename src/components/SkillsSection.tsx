@@ -6,29 +6,46 @@ import { RevealOnScroll, ZoomIn } from "./RevealAnimation";
 import { motion } from "framer-motion";
 
 const skillCategories = [
- 
   {
-    title: "Frontend Technologies",
-    skills: ["React", "Next.js", "TypeScript", "JavaScript", "HTML5", "CSS3"]
+    title: "Languages",
+    skills: ["JavaScript", "TypeScript", "HTML", "CSS"]
   },
   {
-    title: "State Management",
-    // skills: ["Redux Toolkit", "Redux Persist", "Context API"]
-    skills: ["React Context API"]
+    title: "Frameworks",
+    skills: ["React.js", "Next.js 15", "React Native (Expo)", "React Query", "React Hook Form + Validation"]
   },
   {
-    title: "UI Frameworks",
-    // skills: ["Material UI", "Shadcn UI", "Bootstrap"]
-    skills: ["Tailwind CSS", "Shadcn UI", "Bootstrap"]
+    title: "E-Commerce",
+    skills: ["Shopify", "Liquid", "Theme Customization", "Impulse & Minimog Themes", "Schema/SEO Markup"]
   },
-  // {
-  //   title: "Tools & Practices",
-  //   skills: ["GitLab", "Redux DevTools", "Detailed SEO Extension", "Agile (Kanban, Scrum)", "ClickUp"]
-  // },
   {
-    title: "Routing",
-    skills: ["React", "Router", "Next.js", "File-based Routing"]
+    title: "Styling Libraries",
+    skills: ["Tailwind CSS", "shadcn/ui", "Bootstrap"]
   },
+  {
+    title: "State Management & API",
+    skills: ["React Context API", "Redux", "REST APIs", "Fetch/Axios"]
+  },
+  {
+    title: "Routing & Responsive Design",
+    skills: ["React Router", "Next.js File-based Routing", "Media Queries", "Flexbox", "CSS Grid"]
+  },
+  {
+    title: "Monorepo & Build Tools",
+    skills: ["Yarn Workspaces", "Turborepo", "EAS Build", "Code Splitting", "Lazy Loading"]
+  },
+  {
+    title: "Version Control & Deployment",
+    skills: ["Git", "GitHub", "Sourcetree", "Vercel", "npm", "Yarn"]
+  },
+];
+
+const strengths = [
+  "Effective Communication",
+  "Problem Solving",
+  "Team Collaboration",
+  "SEO Optimization",
+  "Performance Optimization",
 ];
 
 export default function SkillsSection() {
@@ -105,14 +122,7 @@ export default function SkillsSection() {
           </RevealOnScroll>
           
           <div className="hidden md:grid grid-cols-2 md:grid-cols-4 gap-4">
-            {[
-              // "Team Leadership", 
-              "Problem Solving", 
-              "SEO Optimization", 
-              "Performance Optimization",
-              'Accessibility',
-              'Clean Code'
-            ].map((strength, index) => (
+            {strengths.map((strength, index) => (
               <ZoomIn key={index} delay={0.2 + (index * 0.15)}>
                 <Card className="border-none shadow-md hover:shadow-lg transition-all duration-300 bg-white">
                   <CardContent className="p-4 text-center">
@@ -128,14 +138,7 @@ export default function SkillsSection() {
             ))}
           </div>
           <div className="flex md:hidden justify-center items-center flex-wrap gap-4">
-          {[
-              // "Team Leadership", 
-              "Problem Solving", 
-              "SEO Optimization", 
-              "Performance Optimization",
-              'Accessibility',
-              'Clean Code'
-            ].map((strength, index) => (
+          {strengths.map((strength, index) => (
               <ZoomIn key={index} delay={0.2 + (index * 0.15)}>
                 <Card className="border-none shadow-md hover:shadow-lg transition-all duration-300 bg-white basis-[50%]">
                   <CardContent className="p-4 text-center">

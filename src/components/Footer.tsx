@@ -35,7 +35,7 @@ export default function Footer() {
                 <Github size={20} />
               </motion.a>
               <motion.a 
-                href="https://www.linkedin.com/in/saurav-singh-163a9223a/" 
+                href="https://www.linkedin.com/in/saurav-singh-developer/" 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="hover:text-sky-400 transition-colors"

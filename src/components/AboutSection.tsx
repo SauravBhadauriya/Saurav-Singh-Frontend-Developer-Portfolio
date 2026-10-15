@@ -19,8 +19,8 @@ export default function AboutSection() {
           <RevealOnScroll>
             <h2 className="section-heading text-center mx-auto">About Me</h2>
             <p className="text-center text-slate-600 mb-12 max-w-2xl mx-auto">
-              Frontend Software Developer with over 2+ years of experience creating responsive and 
-              user-friendly web applications.
+              Frontend-focused Software Developer with 3+ years of experience building modern web
+              applications, Shopify storefronts, and mobile apps.
             </p>
           </RevealOnScroll>
         </div>
@@ -36,9 +36,9 @@ export default function AboutSection() {
                   transition={{ delay: 0.4, duration: 0.5 }}
                   viewport={{ once: true }}
                 >
-                  I am a Passionate Frontend Software Developer with experience in Next.js, React.js, JavaScript and various modern frontend technologies. My expertise lies in 
-                  developing high-performance web applications with a focus on clean, maintainable code 
-                  and exceptional user experiences.
+                  I am a frontend-focused software developer with 3+ years of experience building modern web
+                  applications with React, Next.js, and TypeScript, alongside Shopify storefront development
+                  and React Native/Expo mobile apps.
                 </motion.p>
                 <motion.p 
                   className="text-slate-700 mb-4 text-base lg:text-lg"
@@ -47,8 +47,8 @@ export default function AboutSection() {
                   transition={{ delay: 0.6, duration: 0.5 }}
                   viewport={{ once: true }}
                 >
-                  With over 2+ years of professional experience, I am eager to contribute my technical expertise, problem-solving skills, and collaborate effectively within innovative software development environments.
-
+                  I currently lead web development and technical coordination at Cultre Boat, working across
+                  client Shopify stores, a cross-platform mobile app, and web deployments.
                 </motion.p>
                 <motion.p 
                   className="text-slate-700 text-base lg:text-lg"
@@ -57,9 +57,8 @@ export default function AboutSection() {
                   transition={{ delay: 0.8, duration: 0.5 }}
                   viewport={{ once: true }}
                 >
-                  I'm constantly learning and exploring new technologies to stay updated with the
-                  latest trends in frontend development. I'm particularly interested in optimizing
-                  web performance, creating accessible user interfaces, and implementing modern design systems.
+                  I'm a strong problem-solver and team player with a track record of shipping reliable,
+                  well-tested features, and I care about web performance, SEO, and clean, maintainable code.
                 </motion.p>
               </CardContent>
             </Card>
@@ -83,7 +82,7 @@ export default function AboutSection() {
                     </div>
                     <div>
                       <h4 className="font-medium text-slate-900">Location</h4>
-                      <p className="text-slate-600">Bareilly, Uttar Pradesh, India</p>
+                      <p className="text-slate-600">New Delhi, Delhi - 110016</p>
                     </div>
                   </motion.div>
                   
@@ -99,7 +98,7 @@ export default function AboutSection() {
                     </div>
                     <div>
                       <h4 className="font-medium text-slate-900">Experience</h4>
-                      <p className="text-slate-600">2+ Years</p>
+                      <p className="text-slate-600">3+ Years</p>
                     </div>
                   </motion.div>
                   
@@ -115,7 +114,7 @@ export default function AboutSection() {
                     </div>
                     <div>
                       <h4 className="font-medium text-slate-900">Main Tech Stack</h4>
-                      <p className="text-slate-600">React, Next.js, TypeScript</p>
+                      <p className="text-slate-600">React, Next.js, TypeScript, Shopify, React Native</p>
                     </div>
                   </motion.div>
                   

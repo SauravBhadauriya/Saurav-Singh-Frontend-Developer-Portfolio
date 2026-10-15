@@ -8,10 +8,10 @@ import { Badge } from "@/components/ui/badge";
 
 const education = [
   {
-    degree: "Bachelor of Technology",
-    institution: "Dr. A.P.J. Abdul Kalam Technical University",
-    location: "Lucknow, India",
-    period: "2024",
+    degree: "B.Tech in Computer Science and Engineering",
+    institution: "Future Institute of Engineering and Technology",
+    location: "Bareilly, India",
+    period: "2019 – 2023",
     score: "68%"
   },
   {

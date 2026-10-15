@@ -67,7 +67,7 @@ export default function HeroSection() {
             >
               <Typewriter
                 words={[
-                  "Frontend Software Developer specializing in modern web technologies and creating exceptional user experiences.",
+                  "Frontend Developer building modern web apps with React, Next.js & TypeScript, Shopify storefronts, and React Native mobile apps.",
                 ]}
                 loop={false}
                 cursor
@@ -114,7 +114,7 @@ export default function HeroSection() {
                   <Github size={20} />
                 </motion.a>
                 <motion.a
-                  href="https://www.linkedin.com/in/saurav-singh-163a9223a/"
+                  href="https://www.linkedin.com/in/saurav-singh-developer/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="bg-white/10 hover:bg-white/20 p-3 rounded-full text-white transition-colors duration-300"
@@ -146,7 +146,7 @@ export default function HeroSection() {
               <div className="w-60 h-60 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-sky-400/30 relative z-10  mt-[30px] md:mt-auto">
                 <img
                   src="/lovable-uploads/DP.png"
-                  alt="Shweta Saxena"
+                  alt="Saurav Singh"
                   className=" object-cover"
                 />
               </div>
