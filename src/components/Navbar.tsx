@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Code } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { motion, AnimatePresence } from "framer-motion";
 import { RollingText } from "@/components/ui/animated-link";
@@ -25,8 +25,13 @@ export default function Navbar() {
     >
       <div className="pointer-events-auto w-full max-w-5xl rounded-2xl md:rounded-full border border-zinc-800/80 bg-zinc-950/70 backdrop-blur-md shadow-lg shadow-black/30">
         <div className="flex items-center justify-between px-6 py-3">
-          <Link to="/" className="text-sm font-semibold tracking-tight text-white">
-            Saurav Singh
+          <Link to="/" className="group flex items-center gap-2.5" aria-label="Saurav Dev, home">
+            <span className="flex h-8 w-8 items-center justify-center rounded-lg border border-cyan-400/40 bg-cyan-400/10 transition-colors duration-300 group-hover:bg-cyan-400/20">
+              <Code className="h-4 w-4 text-cyan-400" aria-hidden="true" />
+            </span>
+            <span className="max-w-0 overflow-hidden whitespace-nowrap text-base font-bold tracking-tight text-white opacity-0 transition-all duration-300 ease-out group-hover:max-w-[8rem] group-hover:opacity-100">
+              Saurav <span className="text-cyan-400">Dev</span>
+            </span>
           </Link>
 
           {/* Desktop Navigation */}
