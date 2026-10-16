@@ -3,7 +3,7 @@ import { MapPin, Calendar, Code } from "lucide-react";
 import { RevealOnScroll, SlideInFromLeft, SlideInFromRight } from "./RevealAnimation";
 import { motion } from "framer-motion";
 
-const details = [
+export const details = [
   { icon: MapPin, label: "Location", value: "New Delhi, Delhi - 110016" },
   { icon: Calendar, label: "Experience", value: "3+ Years" },
   { icon: Code, label: "Main Tech Stack", value: "React, Next.js, TypeScript, Shopify, React Native" },
@@ -74,7 +74,7 @@ export default function AboutSection() {
                     viewport={{ once: true }}
                   >
                     <div className="rounded-full border border-zinc-800 bg-zinc-950 p-3">
-                      <item.icon className="h-5 w-5 text-zinc-300" />
+                      <item.icon className="h-5 w-5 text-cyan-400" />
                     </div>
                     <div>
                       <h4 className="font-medium text-white">{item.label}</h4>

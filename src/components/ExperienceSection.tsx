@@ -3,7 +3,7 @@ import { ExternalLink } from "lucide-react";
 import { RevealOnScroll } from "./RevealAnimation";
 import { motion } from "framer-motion";
 
-const experiences = [
+export const experiences = [
   {
     role: "Web Developer & Manager",
     company: "Cultre Boat",
@@ -68,7 +68,7 @@ export default function ExperienceSection() {
                   </p>
                 </div>
                 <div className="flex flex-col md:items-end gap-2">
-                  <span className="w-fit rounded-full border border-zinc-700 px-3 py-1 text-xs text-zinc-300">
+                  <span className="w-fit rounded-full border border-cyan-400/40 px-3 py-1 text-xs text-cyan-400">
                     {exp.period}
                   </span>
                   <a
@@ -77,7 +77,7 @@ export default function ExperienceSection() {
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-1 text-sm text-zinc-400 transition-colors hover:text-white"
                   >
-                    {exp.website.label} <ExternalLink className="h-3.5 w-3.5" />
+                    {exp.website.label} <ExternalLink className="h-3.5 w-3.5 text-cyan-400" />
                   </a>
                 </div>
               </div>

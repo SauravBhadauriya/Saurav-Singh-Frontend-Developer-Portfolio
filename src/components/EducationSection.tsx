@@ -3,7 +3,7 @@ import { GraduationCap } from "lucide-react";
 import { RevealOnScroll } from "./RevealAnimation";
 import { motion } from "framer-motion";
 
-const education = [
+export const education = [
   {
     degree: "B.Tech in Computer Science and Engineering",
     institution: "Future Institute of Engineering and Technology",
@@ -51,7 +51,7 @@ export default function EducationSection() {
               viewport={{ once: true }}
             >
               <div className="mb-6 w-fit rounded-full border border-zinc-800 bg-zinc-950 p-3">
-                <GraduationCap className="h-6 w-6 text-zinc-300" />
+                <GraduationCap className="h-6 w-6 text-cyan-400" />
               </div>
               <h3 className="text-xl font-semibold tracking-tight text-white">{edu.degree}</h3>
               <p className="mt-2 text-zinc-300">{edu.institution}</p>

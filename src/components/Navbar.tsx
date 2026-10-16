@@ -1,43 +1,20 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { motion, AnimatePresence } from "framer-motion";
 import { RollingText } from "@/components/ui/animated-link";
 
 const navLinks = [
-  { title: "Home", href: "#home" },
-  { title: "About", href: "#about" },
-  { title: "Skills", href: "#skills" },
-  { title: "Experience", href: "#experience" },
-  { title: "Projects", href: "#projects" },
-  { title: "Education", href: "#education" },
-  { title: "Contact", href: "#contact" },
+  { title: "Home", to: "/" },
+  { title: "Work", to: "/work" },
+  { title: "About", to: "/about" },
+  { title: "Connect", to: "/connect" },
 ];
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const [activeSection, setActiveSection] = useState("home");
-
-  useEffect(() => {
-    const handleScroll = () => {
-      // Find which section is currently in view
-      const sections = document.querySelectorAll("section[id]");
-      let currentSection = "home";
-
-      sections.forEach((section) => {
-        const rect = section.getBoundingClientRect();
-        const sectionTop = rect.top + window.scrollY - 100;
-        if (window.scrollY >= sectionTop && window.scrollY < sectionTop + rect.height) {
-          currentSection = section.id;
-        }
-      });
-
-      setActiveSection(currentSection);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  const { pathname } = useLocation();
 
   return (
     <motion.header
@@ -48,19 +25,19 @@ export default function Navbar() {
     >
       <div className="pointer-events-auto w-full max-w-5xl rounded-2xl md:rounded-full border border-zinc-800/80 bg-zinc-950/70 backdrop-blur-md shadow-lg shadow-black/30">
         <div className="flex items-center justify-between px-6 py-3">
-          <a href="#home" className="text-sm font-semibold tracking-tight text-white">
+          <Link to="/" className="text-sm font-semibold tracking-tight text-white">
             Saurav Singh
-          </a>
+          </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-7">
             {navLinks.map((link) => {
-              const id = link.href.replace("#", "");
-              const isActive = activeSection === id;
+              const isActive = pathname === link.to;
               return (
-                <a
+                <Link
                   key={link.title}
-                  href={link.href}
+                  to={link.to}
+                  aria-current={isActive ? "page" : undefined}
                   className={cn(
                     "group relative text-sm transition-colors duration-300",
                     isActive ? "text-white" : "text-zinc-400 hover:text-white"
@@ -69,12 +46,12 @@ export default function Navbar() {
                   <RollingText>{link.title}</RollingText>
                   {isActive && (
                     <motion.span
-                      className="absolute -bottom-1 left-0 right-0 h-px bg-white"
+                      className="absolute -bottom-1 left-0 right-0 h-px bg-cyan-400"
                       layoutId="activeSection"
                       transition={{ type: "spring", stiffness: 400, damping: 30 }}
                     />
                   )}
-                </a>
+                </Link>
               );
             })}
           </nav>
@@ -100,26 +77,19 @@ export default function Navbar() {
               exit={{ height: 0, opacity: 0 }}
               transition={{ duration: 0.3 }}
             >
-              {navLinks.map((link) => {
-                const id = link.href.replace("#", "");
-                return (
-                  <a
-                    key={link.title}
-                    href={link.href}
-                    className={cn(
-                      "block px-6 py-3.5 text-sm transition-colors hover:bg-white/5",
-                      activeSection === id ? "text-white" : "text-zinc-400"
-                    )}
-                    onClick={(e) => {
-                      e.preventDefault();
-                      document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
-                      setTimeout(() => setIsOpen(false), 300);
-                    }}
-                  >
-                    {link.title}
-                  </a>
-                );
-              })}
+              {navLinks.map((link) => (
+                <Link
+                  key={link.title}
+                  to={link.to}
+                  onClick={() => setIsOpen(false)}
+                  className={cn(
+                    "block px-6 py-3.5 text-sm transition-colors hover:bg-white/5",
+                    pathname === link.to ? "text-white" : "text-zinc-400"
+                  )}
+                >
+                  {link.title}
+                </Link>
+              ))}
             </motion.nav>
           )}
         </AnimatePresence>

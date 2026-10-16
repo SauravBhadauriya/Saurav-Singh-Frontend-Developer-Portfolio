@@ -92,7 +92,14 @@ export function HoverButton({
   const content = (
     <>
       {children}
-      {Icon && <Icon className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />}
+      {Icon && (
+        <Icon
+          className={cn(
+            "h-4 w-4 transition-transform duration-300 group-hover:translate-x-1",
+            variant === "solid" ? "text-cyan-600" : "text-cyan-400"
+          )}
+        />
+      )}
     </>
   );
 

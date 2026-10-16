@@ -57,7 +57,7 @@ export default function ContactSection() {
                 }
               >
                 <div className="mb-4 rounded-full border border-zinc-800 bg-zinc-950 p-4">
-                  <item.icon className="h-6 w-6 text-zinc-300" />
+                  <item.icon className="h-6 w-6 text-cyan-400" />
                 </div>
                 <h4 className="mb-2 text-lg font-medium text-white">{item.label}</h4>
                 {item.content}

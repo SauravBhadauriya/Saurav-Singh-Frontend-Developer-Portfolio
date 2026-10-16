@@ -1,7 +1,7 @@
 import React from "react";
 import { RevealOnScroll } from "./RevealAnimation";
 
-const skillCategories = [
+export const skillCategories = [
   {
     title: "Languages",
     skills: ["JavaScript", "TypeScript", "HTML", "CSS"]
@@ -36,7 +36,7 @@ const skillCategories = [
   },
 ];
 
-const strengths = [
+export const strengths = [
   "Effective Communication",
   "Problem Solving",
   "Team Collaboration",
@@ -69,7 +69,7 @@ export default function SkillsSection() {
                   {category.skills.map((skill) => (
                     <span
                       key={skill}
-                      className="rounded-full border border-zinc-700 bg-zinc-950 px-3 py-1.5 text-sm text-zinc-300 transition-colors duration-300 hover:border-zinc-500 hover:text-white"
+                      className="rounded-full border border-zinc-700 bg-zinc-950 px-3 py-1.5 text-sm text-zinc-300 transition-colors duration-300 hover:border-cyan-400 hover:text-cyan-400"
                     >
                       {skill}
                     </span>
@@ -87,7 +87,7 @@ export default function SkillsSection() {
               {strengths.map((strength) => (
                 <span
                   key={strength}
-                  className="rounded-full border border-zinc-800/80 bg-zinc-900/60 px-5 py-2.5 text-sm font-medium text-zinc-200"
+                  className="rounded-full border border-zinc-800/80 bg-zinc-900/60 px-5 py-2.5 text-sm font-medium text-zinc-200 transition-colors duration-300 hover:border-cyan-400 hover:text-cyan-400"
                 >
                   {strength}
                 </span>

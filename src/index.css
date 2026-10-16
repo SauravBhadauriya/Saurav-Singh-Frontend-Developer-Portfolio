@@ -1,5 +1,5 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -66,7 +66,7 @@
   
   .project-card::after {
     content: '';
-    @apply absolute -bottom-0.5 left-0 w-0 h-0.5 bg-sky-500 transition-all duration-300;
+    @apply absolute -bottom-0.5 left-0 w-0 h-0.5 bg-cyan-400 transition-all duration-300;
   }
   
   .project-card:hover::after {
@@ -78,7 +78,7 @@
   }
 
   .gradient-text {
-    @apply bg-gradient-to-r from-sky-400 to-blue-500 text-transparent bg-clip-text;
+    @apply bg-gradient-to-r from-cyan-400 to-cyan-600 text-transparent bg-clip-text;
   }
 
   .nav-link {
@@ -87,7 +87,7 @@
   
   .nav-link::after {
     content: '';
-    @apply absolute left-0 -bottom-1 w-0 h-0.5 bg-sky-400 transition-all duration-300;
+    @apply absolute left-0 -bottom-1 w-0 h-0.5 bg-cyan-400 transition-all duration-300;
   }
   
   .nav-link:hover::after {
@@ -103,8 +103,8 @@
   }
   
   .bg-grid-pattern {
-    background-image: linear-gradient(to right, rgba(99, 179, 237, 0.1) 1px, transparent 1px),
-                      linear-gradient(to bottom, rgba(99, 179, 237, 0.1) 1px, transparent 1px);
+    background-image: linear-gradient(to right, rgba(34, 211, 238, 0.1) 1px, transparent 1px),
+                      linear-gradient(to bottom, rgba(34, 211, 238, 0.1) 1px, transparent 1px);
     background-size: 20px 20px;
   }
 }
