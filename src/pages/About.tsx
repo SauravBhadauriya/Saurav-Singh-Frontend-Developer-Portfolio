@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { ArrowRight, Download, ExternalLink } from "lucide-react";
+import { ArrowRight, Download, ExternalLink, Code } from "lucide-react";
 import Footer from "@/components/Footer";
 import HeroBanner from "@/components/HeroBanner";
 import Navbar from "@/components/Navbar";
@@ -338,7 +338,7 @@ export default function About() {
               key={copy}
               className="px-8 text-4xl font-bold italic uppercase tracking-tight text-zinc-900 md:text-6xl"
             >
-              Your vision deserves exceptional design. <span className="px-6 text-zinc-400">✦</span>
+              Clean code, fast interfaces, shipped to production. <Code className="mx-6 inline h-6 w-6 text-zinc-400" aria-hidden="true" />
             </p>
           ))}
         </motion.div>
