@@ -87,15 +87,15 @@ export const storefrontImages: Record<string, string> = {
 };
 
 export const storefronts = [
-  { name: "zevar by Geeta", href: "https://zevarbygeeta.com", label: "zevarbygeeta.com", description: "Built and customized the Shopify storefront and integrated Fastrr COD/RTO, Meta Pixel, and Wigzo." },
-  { name: "Lizpaul", href: "https://lizpaul.in", label: "lizpaul.in", description: "Developed the storefront and worked on Product, LocalBusiness, and FAQPage structured data and AI search visibility." },
-  { name: "Amayra Jewellery", href: "https://amayrajewellery.com", label: "amayrajewellery.com", description: "Developed and customized the online jewellery storefront and its product collections." },
-  { name: "The Koe Beauty", href: "https://thekoebeauty.com", label: "thekoebeauty.com", description: "Built and customized the Shopify storefront for a beauty brand, focused on responsive product browsing." },
-  { name: "Kelby Huston", href: "https://kelbyhuston.com", label: "kelbyhuston.com", description: "Developed the Shopify storefront and customized the shopping experience across key store pages." },
-  { name: "Canadian Pine Pollen", href: "https://canadianpinepollen.com", label: "canadianpinepollen.com", description: "Worked on the storefront and its product-focused shopping pages." },
-  { name: "Amiraah India", href: "https://amiraahindia.com", label: "amiraahindia.com", description: "Worked on the storefront and a consistent product presentation across the website." },
-  { name: "Aashima Behl", href: "https://www.aashimabehl.com", label: "aashimabehl.com", description: "Worked on the fashion storefront and product presentation across store pages." },
-  { name: "Kalista Studio", href: "https://kalistastudio.in", label: "kalistastudio.in", description: "Worked on the terms and conditions page and its integration with the storefront." },
+  { name: "zevar by Geeta", href: "https://zevarbygeeta.com", label: "zevarbygeeta.com", description: "Ongoing development and maintenance of the Shopify storefront, with Fastrr COD/RTO, Meta Pixel, and Wigzo integrated for commerce and marketing." },
+  { name: "Lizpaul", href: "https://lizpaul.in", label: "lizpaul.in", description: "Ongoing development and maintenance of the storefront, including Product, LocalBusiness, and FAQPage structured data for SEO and AI search visibility." },
+  { name: "Amayra Jewellery", href: "https://amayrajewellery.com", label: "amayrajewellery.com", description: "Ongoing development and maintenance of the online jewellery storefront and its product collections." },
+  { name: "The Koe Beauty", href: "https://thekoebeauty.com", label: "thekoebeauty.com", description: "Ongoing development and maintenance of the Shopify storefront for a beauty brand, focused on responsive product browsing." },
+  { name: "Kelby Huston", href: "https://kelbyhuston.com", label: "kelbyhuston.com", description: "Ongoing development and maintenance of the Shopify storefront and the shopping experience across key store pages." },
+  { name: "Canadian Pine Pollen", href: "https://canadianpinepollen.com", label: "canadianpinepollen.com", description: "Ongoing development and maintenance of the storefront and its product-focused shopping pages." },
+  { name: "Amiraah India", href: "https://amiraahindia.com", label: "amiraahindia.com", description: "Ongoing development and maintenance of the storefront and a consistent product presentation across the website." },
+  { name: "Aashima Behl", href: "https://www.aashimabehl.com", label: "aashimabehl.com", description: "Ongoing development and maintenance of the fashion storefront and its product presentation across store pages." },
+  { name: "Kalista Studio", href: "https://kalistastudio.in", label: "kalistastudio.in", description: "Ongoing development and maintenance of the Shopify storefront: product and collection pages, feature updates, and the terms and conditions page." },
 ];
 
 export default function ProjectsSection() {
