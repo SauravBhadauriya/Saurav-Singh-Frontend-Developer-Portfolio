@@ -1,4 +1,3 @@
-import React from "react";
 import { GraduationCap } from "lucide-react";
 import { RevealOnScroll } from "./RevealAnimation";
 import { motion } from "framer-motion";

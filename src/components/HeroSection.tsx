@@ -1,4 +1,3 @@
-import React from "react";
 import { ArrowRight, Download } from "lucide-react";
 import HeroBanner from "@/components/HeroBanner";
 import { HoverButton } from "@/components/ui/animated-link";
@@ -21,7 +20,7 @@ export default function HeroSection() {
           <HoverButton href="/work" icon={ArrowRight}>
             Explore Work
           </HoverButton>
-          <HoverButton href="/Resume/Saurav_Singh_Frontend_Developer_resume.pdf" download icon={Download}>
+          <HoverButton href="/Resume/Saurav_Singh_Resume.pdf" download icon={Download}>
             Download Resume
           </HoverButton>
         </>

@@ -1,4 +1,3 @@
-import React from "react";
 import { motion } from "framer-motion";
 import { ArrowUpRight, Briefcase, Github, Instagram, Linkedin, Mail, type LucideIcon } from "lucide-react";
 import { WhatsAppIcon } from "@/components/icons/WhatsAppIcon";
@@ -21,7 +20,7 @@ export const connectCards: ConnectCard[] = [
   { label: "Email", value: EMAIL, icon: Mail, href: EMAIL_URL },
   { label: "Instagram", value: "@saurav_thakur17", icon: Instagram, href: "https://www.instagram.com/saurav_thakur17/" },
   { label: "WhatsApp", value: `+91 ${WHATSAPP_NUMBER}`, icon: WhatsAppIcon, href: WHATSAPP_URL },
-  { label: "Hire Me", value: "Download my resume", icon: Briefcase, href: "/Resume/Saurav_Singh_Frontend_Developer_resume.pdf", download: true },
+  { label: "Hire Me", value: "Download my resume", icon: Briefcase, href: "/Resume/Saurav_Singh_Resume.pdf", download: true },
 ];
 
 export const cardClass =

@@ -1,4 +1,3 @@
-import React from "react";
 import { MapPin, Calendar, Code } from "lucide-react";
 import { RevealOnScroll, SlideInFromLeft, SlideInFromRight } from "./RevealAnimation";
 import { motion } from "framer-motion";

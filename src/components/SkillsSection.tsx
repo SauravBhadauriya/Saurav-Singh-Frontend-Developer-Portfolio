@@ -1,26 +1,25 @@
-import React from "react";
 import { RevealOnScroll } from "./RevealAnimation";
 
 export const skillCategories = [
   {
     title: "Languages",
-    skills: ["JavaScript", "TypeScript", "HTML", "CSS"]
+    skills: ["JavaScript (ES6+)", "TypeScript", "HTML5", "CSS3"]
   },
   {
     title: "Frameworks",
-    skills: ["React.js", "Next.js 15", "React Native (Expo)", "React Query", "React Hook Form + Validation"]
+    skills: ["React.js", "Next.js 15", "React Native", "Expo", "React Query", "React Hook Form", "React Router"]
   },
   {
     title: "E-Commerce",
-    skills: ["Shopify", "Liquid", "Theme Customization", "Impulse & Minimog Themes", "Schema/SEO Markup"]
+    skills: ["Shopify", "Liquid", "Theme Customization (Impulse, Minimog)", "Structured Data / Schema Markup", "SEO"]
   },
   {
     title: "Styling Libraries",
-    skills: ["Tailwind CSS", "shadcn/ui", "Bootstrap"]
+    skills: ["Tailwind CSS", "shadcn/ui", "Bootstrap", "Responsive Design", "Flexbox", "CSS Grid", "Media Queries"]
   },
   {
     title: "State Management & API",
-    skills: ["React Context API", "Redux", "REST APIs", "Fetch/Axios"]
+    skills: ["Redux", "React Context API", "REST APIs", "Axios", "Fetch API"]
   },
   {
     title: "Routing & Responsive Design",
@@ -28,20 +27,20 @@ export const skillCategories = [
   },
   {
     title: "Monorepo & Build Tools",
-    skills: ["Yarn Workspaces", "Turborepo", "EAS Build", "Code Splitting", "Lazy Loading"]
+    skills: ["Turborepo", "Yarn Workspaces", "EAS Build", "Code Splitting", "Lazy Loading", "Performance Optimization"]
   },
   {
     title: "Version Control & Deployment",
-    skills: ["Git", "GitHub", "Sourcetree", "Vercel", "npm", "Yarn"]
+    skills: ["Git", "GitHub", "Sourcetree", "Vercel", "npm", "Yarn", "Chrome DevTools"]
   },
 ];
 
 export const strengths = [
-  "Effective Communication",
+  "Communication",
   "Problem Solving",
   "Team Collaboration",
-  "SEO Optimization",
-  "Performance Optimization",
+  "Client Coordination",
+  "Code Reviews",
 ];
 
 export default function SkillsSection() {

@@ -1,4 +1,3 @@
-import React from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, Download, ExternalLink, Code } from "lucide-react";
 import Footer from "@/components/Footer";
@@ -59,7 +58,7 @@ export default function About() {
             <HoverButton href={WHATSAPP_URL} external icon={ArrowRight}>
               Let&apos;s talk
             </HoverButton>
-            <HoverButton href="/Resume/Saurav_Singh_Frontend_Developer_resume.pdf" download icon={Download}>
+            <HoverButton href="/Resume/Saurav_Singh_Resume.pdf" download icon={Download}>
               Download Resume
             </HoverButton>
           </>

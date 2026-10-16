@@ -1,4 +1,3 @@
-import React from "react";
 
 /** WhatsApp logo. Lucide has no brand icons, so the glyph is inlined here. */
 export function WhatsAppIcon({ className, size = 24 }: { className?: string; size?: number }) {

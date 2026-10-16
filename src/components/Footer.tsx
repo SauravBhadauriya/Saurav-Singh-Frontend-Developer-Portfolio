@@ -1,4 +1,3 @@
-import React from "react";
 import { motion } from "framer-motion";
 import { AnimatedLink } from "@/components/ui/animated-link";
 import { EMAIL, EMAIL_URL, WHATSAPP_NUMBER, WHATSAPP_URL } from "@/lib/contact";

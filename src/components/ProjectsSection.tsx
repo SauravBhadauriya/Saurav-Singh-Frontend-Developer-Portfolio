@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { RevealOnScroll } from "./RevealAnimation";
 import { HoverButton } from "@/components/ui/animated-link";
@@ -30,7 +30,7 @@ export const projects: Project[] = [
     description:
       "Shopify storefront builds and customizations for fashion, jewellery, beauty, wellness, and D2C brands, covering responsive UI, product presentation, and SEO/schema markup.",
     contributions: [
-      "Built and customized Shopify storefronts using Liquid and theme customization (Impulse & Minimog themes)",
+      "Built and customized Shopify storefronts for fashion, jewellery, beauty, wellness, and D2C brands using Liquid and theme customization (Impulse & Minimog themes)",
       "Integrated Fastrr COD/RTO, Meta Pixel, and Wigzo to support commerce and marketing workflows",
       "Implemented Product, LocalBusiness, and FAQPage structured data to improve SEO and AI search visibility",
       "Delivered responsive product pages, collection pages, and product discovery experiences",
@@ -47,8 +47,7 @@ export const projects: Project[] = [
     description:
       "The university website built with Next.js, presenting academic programs, admissions information, and institutional content.",
     contributions: [
-      "Worked on the university website built with Next.js, supporting the presentation of academic programs, admissions information, and institutional content",
-      "Contributed to frontend page development and responsive UI improvements to help users navigate university information across devices",
+      "Developed frontend pages and responsive UI improvements for the Next.js university website, presenting academic programs, admissions information, and institutional content across devices",
     ],
     technologies: ["Next.js", "React.js", "JavaScript", "HTML", "CSS"],
     links: [{ label: "Live Site", href: "https://www.kluniversity.in/" }],
@@ -62,8 +61,7 @@ export const projects: Project[] = [
     description:
       "RewardsPlus mobile app listed on Google Play, supporting the company's digital customer and rewards experience.",
     contributions: [
-      "Contributed to frontend development and maintenance as part of work on the RewardsPlus platform",
-      "Supported the company's digital customer and rewards experience on Android",
+      "Contributed to frontend development and maintenance of the RewardsPlus Android app, published on Google Play, supporting the company's digital customer and rewards experience",
     ],
     technologies: ["Android", "Mobile App", "Frontend"],
     links: [
