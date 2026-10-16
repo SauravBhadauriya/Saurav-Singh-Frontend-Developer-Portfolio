@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { AnimatedLink } from "@/components/ui/animated-link";
-import { EMAIL, WHATSAPP_NUMBER, WHATSAPP_URL } from "@/lib/contact";
+import { EMAIL, EMAIL_URL, WHATSAPP_NUMBER, WHATSAPP_URL } from "@/lib/contact";
 
 const pages = [
   { label: "home", href: "/" },
@@ -14,7 +14,7 @@ const socials = [
   { label: "github", href: "https://github.com/SauravBhadauriya" },
   { label: "linkedin", href: "https://www.linkedin.com/in/saurav-singh-developer/" },
   { label: "whatsapp", href: WHATSAPP_URL },
-  { label: "email", href: `mailto:${EMAIL}` },
+  { label: "email", href: EMAIL_URL },
 ];
 
 
@@ -86,7 +86,9 @@ export default function Footer() {
             <div>
               <p className="text-sm italic text-cyan-400">email</p>
               <a
-                href={`mailto:${EMAIL}`}
+                href={EMAIL_URL}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="mt-1 block text-lg sm:text-xl transition-opacity hover:opacity-70"
               >
                 {EMAIL}

@@ -1,3 +1,4 @@
+import { EMAIL_URL } from "@/lib/contact";
 import React from "react";
 import { Phone, Mail, MapPin } from "lucide-react";
 import { motion } from "framer-motion";
@@ -22,7 +23,7 @@ const contacts = [
     icon: Mail,
     label: "Email",
     content: (
-      <a href="mailto:sauravbhadauriya17@gmail.com" className="break-all text-zinc-400 transition-colors hover:text-white">
+      <a href={EMAIL_URL} target="_blank" rel="noopener noreferrer" className="break-all text-zinc-400 transition-colors hover:text-white">
         sauravbhadauriya17@gmail.com
       </a>
     ),

@@ -9,7 +9,6 @@ import { HoverButton } from "@/components/ui/animated-link";
 import { projects, storefronts, storefrontImages, type Project } from "@/components/ProjectsSection";
 import { cn } from "@/lib/utils";
 
-const EMAIL = "sauravbhadauriya17@gmail.com";
 /** Image panel with a zoom on hover. Falls back to the icon when there is no screenshot. */
 function Thumbnail({
   Icon,
@@ -120,8 +119,11 @@ export default function Work() {
           {/* Multi-column grid */}
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {third && (
-              <motion.article
-                className="group rounded-2xl border border-zinc-800/80 bg-zinc-900/60 p-5 transition-colors duration-500 hover:border-zinc-600"
+              <motion.a
+                href={third.links[0]?.href}
+                target={third.links[0] ? "_blank" : undefined}
+                rel={third.links[0] ? "noopener noreferrer" : undefined}
+                className="group block rounded-2xl border border-zinc-800/80 bg-zinc-900/60 p-5 transition-colors duration-500 hover:border-zinc-600"
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.2 }}
@@ -136,7 +138,7 @@ export default function Work() {
                 <p className="mt-5 text-sm text-zinc-400">{third.period}</p>
                 <h3 className="mt-1 text-xl font-semibold tracking-tight text-white">{third.title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-zinc-400">{third.description}</p>
-              </motion.article>
+              </motion.a>
             )}
 
             {storefronts.map((store, index) => (

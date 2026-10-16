@@ -2,14 +2,14 @@ import React from "react";
 import { motion } from "framer-motion";
 import { ArrowUpRight, Briefcase, Github, Instagram, Linkedin, Mail, type LucideIcon } from "lucide-react";
 import { WhatsAppIcon } from "@/components/icons/WhatsAppIcon";
-import { EMAIL, WHATSAPP_NUMBER, WHATSAPP_URL } from "@/lib/contact";
+import { EMAIL, EMAIL_URL, WHATSAPP_NUMBER, WHATSAPP_URL } from "@/lib/contact";
 
 
 type ConnectCard = {
   label: string;
   value: string;
   icon: LucideIcon | typeof WhatsAppIcon;
-  /** External or mailto link */
+  /** Link target; external URLs open in a new tab */
   href?: string;
   /** Downloads the linked file instead of opening it */
   download?: boolean;
@@ -18,7 +18,7 @@ type ConnectCard = {
 export const connectCards: ConnectCard[] = [
   { label: "LinkedIn", value: "Professional profile", icon: Linkedin, href: "https://www.linkedin.com/in/saurav-singh-developer/" },
   { label: "GitHub", value: "Code & projects", icon: Github, href: "https://github.com/SauravBhadauriya" },
-  { label: "Email", value: EMAIL, icon: Mail, href: `mailto:${EMAIL}` },
+  { label: "Email", value: EMAIL, icon: Mail, href: EMAIL_URL },
   { label: "Instagram", value: "@saurav_thakur17", icon: Instagram, href: "https://www.instagram.com/saurav_thakur17/" },
   { label: "WhatsApp", value: `+91 ${WHATSAPP_NUMBER}`, icon: WhatsAppIcon, href: WHATSAPP_URL },
   { label: "Hire Me", value: "Download my resume", icon: Briefcase, href: "/Resume/Saurav_Singh_Frontend_Developer_resume.pdf", download: true },

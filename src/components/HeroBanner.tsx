@@ -2,7 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Github, Instagram, Linkedin, Mail, MapPin } from "lucide-react";
 import { WhatsAppIcon } from "@/components/icons/WhatsAppIcon";
-import { WHATSAPP_URL } from "@/lib/contact";
+import { EMAIL_URL, WHATSAPP_URL } from "@/lib/contact";
 
 export interface HeroAside {
   /** Small uppercase label above the card title */
@@ -35,7 +35,7 @@ const socials = [
   { label: "LinkedIn", href: "https://www.linkedin.com/in/saurav-singh-developer/", icon: Linkedin },
   { label: "Instagram", href: "https://www.instagram.com/saurav_thakur17/", icon: Instagram },
   { label: "WhatsApp", href: WHATSAPP_URL, icon: WhatsAppIcon },
-  { label: "Email", href: "mailto:sauravbhadauriya17@gmail.com", icon: Mail },
+  { label: "Email", href: EMAIL_URL, icon: Mail },
 ];
 
 const iconClass = "rounded-full bg-white/10 p-3 text-cyan-400 transition-colors duration-300 hover:bg-white/20";

@@ -67,7 +67,14 @@ const Index = () => {
             />
             <div className="grid gap-6 md:grid-cols-3">
               {previewProjects.map((project, index) => (
-                <motion.div key={project.title} className="flex h-full flex-col overflow-hidden rounded-2xl border border-zinc-800/80 bg-zinc-900/60" {...reveal(index)}>
+                <motion.a
+                  key={project.title}
+                  href={project.links[0]?.href}
+                  target={project.links[0] ? "_blank" : undefined}
+                  rel={project.links[0] ? "noopener noreferrer" : undefined}
+                  className="group flex h-full flex-col overflow-hidden rounded-2xl border border-zinc-800/80 bg-zinc-900/60 transition-colors duration-500 hover:border-zinc-600"
+                  {...reveal(index)}
+                >
                   <div className="relative aspect-video overflow-hidden bg-zinc-950">
                     {project.image ? (
                       <img
@@ -87,7 +94,7 @@ const Index = () => {
                     <h3 className="mt-1 text-lg font-semibold tracking-tight text-white">{project.title}</h3>
                     <p className="mt-2 line-clamp-3 text-sm leading-relaxed text-zinc-400">{project.description}</p>
                   </div>
-                </motion.div>
+                </motion.a>
               ))}
             </div>
           </div>
