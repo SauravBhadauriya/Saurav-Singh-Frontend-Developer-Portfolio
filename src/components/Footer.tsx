@@ -67,7 +67,7 @@ export default function Footer() {
           <span className="relative inline-block">
             <img
               src="/Profiles/footer.png"
-              alt="Saurav Singh"
+              alt="Saurav Singh, Frontend Developer"
               className="h-16 w-16 sm:h-24 sm:w-24 lg:h-36 lg:w-36 rounded-xl sm:rounded-2xl object-cover"
             />
             {/* Small circular indicator overlapping the bottom edge */}

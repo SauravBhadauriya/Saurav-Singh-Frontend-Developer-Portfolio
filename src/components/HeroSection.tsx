@@ -14,7 +14,7 @@ export default function HeroSection() {
         </>
       }
       subtitle="Frontend Software Engineer & Shopify/Web Expert"
-      description="3+ years of experience building modern web apps, Shopify storefronts, and React Native mobile apps."
+      description="Saurav Singh is a frontend developer with 3+ years of experience building web applications with React, Next.js, and TypeScript. He also works with Shopify storefronts and React Native mobile apps."
       actions={
         <>
           <HoverButton href="/work" icon={ArrowRight}>

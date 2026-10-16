@@ -1,0 +1,7 @@
+# Saurav Singh - Frontend Developer
+> Portfolio of Saurav Singh, a frontend developer specializing in React, Next.js, TypeScript, Shopify, and React Native.
+
+- [Home](https://sauravcodes.vercel.app/): Portfolio, projects, and contact information
+- [Work](https://sauravcodes.vercel.app/work): Shopify storefronts, web platforms, and mobile app projects
+- [About](https://sauravcodes.vercel.app/about): Background, skills, experience, and education
+- [Connect](https://sauravcodes.vercel.app/connect): Email, WhatsApp, LinkedIn, GitHub, and Instagram

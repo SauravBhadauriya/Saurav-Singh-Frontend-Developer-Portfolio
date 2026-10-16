@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 export const details = [
   { icon: MapPin, label: "Location", value: "New Delhi, Delhi - 110016" },
   { icon: Calendar, label: "Experience", value: "3+ Years" },
-  { icon: Code, label: "Main Tech Stack", value: "React, Next.js, TypeScript, Shopify, React Native" },
+  { icon: Code, label: "Main Tech Stack", value: "React.js, Next.js, TypeScript, Shopify, React Native" },
 ];
 
 export default function AboutSection() {
