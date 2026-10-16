@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import Navbar from "@/components/Navbar";
+import Seo from "@/components/Seo";
 import HeroSection from "@/components/HeroSection";
 import Footer from "@/components/Footer";
 import { CardBody, cardClass, connectCards } from "@/components/ConnectGrid";
@@ -51,6 +52,11 @@ const Index = () => {
 
   return (
     <>
+      <Seo
+        title="Home"
+        description="Saurav Singh is a frontend developer with 3+ years of experience building web applications with React, Next.js, TypeScript, Shopify, and React Native."
+        path="/"
+      />
       <Navbar />
       <main>
         <HeroSection />

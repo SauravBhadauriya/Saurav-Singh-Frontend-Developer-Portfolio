@@ -3,6 +3,7 @@ import { ArrowRight, Download, ExternalLink, Code } from "lucide-react";
 import Footer from "@/components/Footer";
 import HeroBanner from "@/components/HeroBanner";
 import Navbar from "@/components/Navbar";
+import Seo from "@/components/Seo";
 import { WHATSAPP_URL } from "@/lib/contact";
 import { details } from "@/components/AboutSection";
 import { skillCategories, strengths } from "@/components/SkillsSection";
@@ -47,6 +48,11 @@ const chip =
 export default function About() {
   return (
     <div className="bg-zinc-950 text-white">
+      <Seo
+        title="About"
+        description="Background, experience, and skills of Saurav Singh, a frontend developer with 3+ years of experience."
+        path="/about"
+      />
       <Navbar />
       <HeroBanner
         title="About Me"

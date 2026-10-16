@@ -4,6 +4,7 @@ import { ArrowRight, ArrowUpRight, Download, Code } from "lucide-react";
 import Footer from "@/components/Footer";
 import HeroBanner from "@/components/HeroBanner";
 import Navbar from "@/components/Navbar";
+import Seo from "@/components/Seo";
 import { WHATSAPP_URL } from "@/lib/contact";
 import { HoverButton } from "@/components/ui/animated-link";
 import { projects, storefronts, storefrontImages, type Project } from "@/components/ProjectsSection";
@@ -91,6 +92,11 @@ export default function Work() {
   const [first, second, third] = projects;
   return (
     <div className="bg-zinc-950 text-white">
+      <Seo
+        title="Projects"
+        description="Frontend projects by Saurav Singh, built with React, Next.js, TypeScript, and Shopify."
+        path="/work"
+      />
       <Navbar />
       <HeroBanner
         title="Selected Work"

@@ -3,6 +3,7 @@ import { ArrowRight, Download, Code } from "lucide-react";
 import Footer from "@/components/Footer";
 import HeroBanner from "@/components/HeroBanner";
 import Navbar from "@/components/Navbar";
+import Seo from "@/components/Seo";
 import { WHATSAPP_URL } from "@/lib/contact";
 import ConnectGrid from "@/components/ConnectGrid";
 import { HoverButton } from "@/components/ui/animated-link";
@@ -10,6 +11,11 @@ import { HoverButton } from "@/components/ui/animated-link";
 export default function Connect() {
   return (
     <div className="bg-[#09090b] text-white">
+      <Seo
+        title="Contact"
+        description="Get in touch with Saurav Singh for frontend development work and collaborations."
+        path="/connect"
+      />
       <Navbar />
       <HeroBanner
         title="Let's Connect"
