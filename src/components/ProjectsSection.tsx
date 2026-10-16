@@ -1,22 +1,14 @@
-import React, { useEffect, useState } from "react";
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
+import React from "react";
 import { motion } from "framer-motion";
 import { RevealOnScroll } from "./RevealAnimation";
-import { ExternalLink, ShoppingBag } from "lucide-react";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "./ui/carousel";
+import { HoverButton } from "@/components/ui/animated-link";
+import { ArrowUpRight, Globe, ShoppingBag, Smartphone } from "lucide-react";
 
 const projects = [
   {
     title: "E-Commerce Storefronts",
     period: "14+ Shopify Stores",
+    icon: ShoppingBag,
     description:
       "Shopify storefront builds and customizations for fashion, jewellery, beauty, wellness, and D2C brands, covering responsive UI, product presentation, and SEO/schema markup.",
     contributions: [
@@ -31,6 +23,7 @@ const projects = [
   {
     title: "KL University Website",
     period: null,
+    icon: Globe,
     description:
       "The university website built with Next.js, presenting academic programs, admissions information, and institutional content.",
     contributions: [
@@ -43,6 +36,7 @@ const projects = [
   {
     title: "RewardsPlus Android App",
     period: "Android",
+    icon: Smartphone,
     description:
       "RewardsPlus mobile app listed on Google Play, supporting the company's digital customer and rewards experience.",
     contributions: [
@@ -76,135 +70,93 @@ const storefronts = [
   { name: "Knick Knack", href: "https://knickknack.online", label: "knickknack.online", description: "Worked on the online shopping storefront, website customization, and product discovery." },
 ];
 
-
 export default function ProjectsSection() {
-  // ✅ Hooks must be HERE
-  const [api, setApi] = useState<any>(null);
-  const [isHovered, setIsHovered] = useState(false);
-
-  useEffect(() => {
-    if (!api || isHovered) return;
-
-    const interval = setInterval(() => {
-      api.scrollNext();
-    }, 4000); // autoplay every 4s
-
-    return () => clearInterval(interval);
-  }, [api, isHovered]);
-
   return (
-    <section id="projects" className="py-20 min-h-screen flex items-center relative overflow-hidden">
-      {/* Background */}
-      <div
-        className="absolute inset-0 -z-10"
-        style={{
-          backgroundImage:
-            "url('https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=2070')",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
-      >
-        <div className="absolute inset-0 bg-slate-950/95 backdrop-blur-sm" />
-      </div>
-
+    <section id="projects" className="py-24 md:py-32 border-t border-zinc-900">
       <div className="container mx-auto px-4">
-        <div className="max-w-4xl mx-auto mb-12 text-center">
+        <div className="max-w-3xl mx-auto mb-16 text-center">
           <RevealOnScroll>
-            <h2 className="section-heading text-white">Featured Projects</h2>
-            <p className="text-slate-300 max-w-2xl mx-auto">
+            <h2 className="section-heading mx-auto">Featured Projects</h2>
+            <p className="text-zinc-400 max-w-2xl mx-auto">
               Shopify storefronts, web platforms, and mobile apps I have built and contributed to.
             </p>
           </RevealOnScroll>
         </div>
 
-       <div
-  className="relative"
-  onMouseEnter={() => setIsHovered(true)}
-  onMouseLeave={() => setIsHovered(false)}
-  onTouchStart={() => setIsHovered(true)}
-  onTouchEnd={() => setIsHovered(false)}
->
-          <Carousel opts={{ loop: true }} setApi={setApi}>
-            <CarouselContent>
-              {projects.map((project, index) => (
-                <CarouselItem key={index} className="flex justify-center px-4">
-                  <motion.div
-                    className="group w-full max-w-4xl"
-                    initial={{ opacity: 0, y: 50 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6 }}
-                    viewport={{ once: true }}
-                  >
-                    <Card className="w-full border-none shadow-lg bg-white/95 backdrop-blur-sm">
-                      <CardHeader>
-                        <div className="flex flex-col md:flex-row md:justify-between md:items-center gap-2">
-                          <CardTitle className="text-2xl font-bold text-slate-800">
-                            {project.title}
-                          </CardTitle>
-                          {project.period && (
-                            <Badge variant="outline" className="bg-sky-50 text-sky-600">
-                              {project.period}
-                            </Badge>
-                          )}
-                        </div>
-                        <CardDescription className="mt-2 text-slate-600">
-                          {project.description}
-                        </CardDescription>
-                      </CardHeader>
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {projects.map((project, index) => {
+            const Icon = project.icon;
+            return (
+              <motion.article
+                key={project.title}
+                className="group flex flex-col overflow-hidden rounded-2xl border border-zinc-800/80 bg-zinc-900/60 transition-colors duration-500 hover:border-zinc-600"
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
+              >
+                {/* Visual header: icon panel that zooms subtly on hover */}
+                <div className="relative h-40 overflow-hidden bg-gradient-to-br from-zinc-800 via-zinc-900 to-zinc-950">
+                  <div className="absolute inset-0 flex items-center justify-center transition-transform duration-500 group-hover:scale-105">
+                    <Icon className="h-12 w-12 text-zinc-500" />
+                  </div>
+                  {project.period && (
+                    <span className="absolute top-4 right-4 rounded-full border border-zinc-700 bg-zinc-950/70 px-3 py-1 text-xs text-zinc-300">
+                      {project.period}
+                    </span>
+                  )}
+                </div>
 
-                      <CardContent>
-                        <h4 className="font-semibold mb-3">Key Contributions:</h4>
-                        <ul className="list-disc pl-5 space-y-1 mb-6">
-                          {project.contributions.map((item, i) => (
-                            <li key={i} className="text-slate-600">
-                              {item}
-                            </li>
-                          ))}
-                        </ul>
+                <div className="flex flex-1 flex-col p-7">
+                  <h3 className="text-2xl font-semibold tracking-tight text-white">{project.title}</h3>
+                  <p className="mt-3 text-sm leading-relaxed text-zinc-400">{project.description}</p>
 
-                        <div className="flex flex-wrap gap-2">
-                          {project.technologies.map((tech, i) => (
-                            <Badge key={i} className="bg-slate-100 text-slate-700">
-                              {tech}
-                            </Badge>
-                          ))}
-                        </div>
-                      </CardContent>
+                  <h4 className="mt-6 text-xs font-medium uppercase tracking-widest text-zinc-500">Key Contributions</h4>
+                  <ul className="mt-3 list-disc pl-5 space-y-2 text-sm leading-relaxed text-zinc-400">
+                    {project.contributions.map((item, i) => (
+                      <li key={i}>{item}</li>
+                    ))}
+                  </ul>
 
-                      {project.links.length > 0 && (
-                        <CardFooter className="flex gap-3 flex-wrap">
-                          {project.links.map((link) => (
-                            <a
-                              key={link.href}
-                              href={link.href}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                            >
-                              <Button className="bg-sky-500 hover:bg-sky-600 text-white">
-                                {link.label} <ExternalLink className="ml-2 h-4 w-4" />
-                              </Button>
-                            </a>
-                          ))}
-                        </CardFooter>
-                      )}
+                  <div className="mt-6 flex flex-wrap gap-2">
+                    {project.technologies.map((tech) => (
+                      <span
+                        key={tech}
+                        className="rounded-full border border-zinc-700 px-3 py-1 text-xs text-zinc-300"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
 
-                    </Card>
-                  </motion.div>
-                </CarouselItem>
-              ))}
-            </CarouselContent>
-
-            <CarouselPrevious className="top-1/2 -translate-y-1/2 left-2 md:-left-12" />
-            <CarouselNext className="top-1/2 -translate-y-1/2 right-2 md:-right-12" />
-          </Carousel>
+                  {project.links.length > 0 && (
+                    <div className="mt-auto pt-6 flex flex-wrap gap-3">
+                      {project.links.map((link) => (
+                        <HoverButton
+                          key={link.href}
+                          href={link.href}
+                          external
+                          variant="solid"
+                          icon={ArrowUpRight}
+                          className="px-5 py-2.5"
+                        >
+                          {link.label}
+                        </HoverButton>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              </motion.article>
+            );
+          })}
         </div>
 
-        <div className="mt-16">
+        <div className="mt-24">
           <RevealOnScroll>
-            <h3 className="text-2xl font-semibold mb-2 font-poppins text-white text-center">
+            <h3 className="text-2xl md:text-3xl font-semibold tracking-tight text-white text-center mb-2">
               Shopify Storefronts
             </h3>
-            <p className="text-slate-400 text-center mb-8">
+            <p className="text-zinc-400 text-center mb-10">
               Shopify · Liquid · Theme Customization · Responsive UI · SEO/Schema Markup
             </p>
           </RevealOnScroll>
@@ -216,22 +168,17 @@ export default function ProjectsSection() {
                 href={store.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group block rounded-lg bg-white/5 border border-white/10 p-5 hover:bg-white/10 hover:border-sky-400/40 transition-colors"
+                className="group block rounded-2xl border border-zinc-800/80 bg-zinc-900/60 p-6 transition-colors duration-300 hover:border-zinc-600"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: 0.05 * (index % 6) }}
                 viewport={{ once: true }}
-                whileHover={{ y: -4 }}
               >
-                <div className="flex items-center gap-3 mb-2">
-                  <div className="bg-sky-500/15 p-2 rounded-full">
-                    <ShoppingBag className="h-4 w-4 text-sky-400" />
-                  </div>
-                  <h4 className="font-semibold text-white">{store.name}</h4>
-                </div>
-                <p className="text-slate-400 text-sm mb-3">{store.description}</p>
-                <span className="text-sky-400 text-sm inline-flex items-center gap-1 group-hover:text-sky-300">
-                  {store.label} <ExternalLink className="h-3.5 w-3.5" />
+                <h4 className="font-semibold text-white">{store.name}</h4>
+                <p className="mt-2 text-sm leading-relaxed text-zinc-400">{store.description}</p>
+                <span className="mt-4 inline-flex items-center gap-1 text-sm text-zinc-300 transition-colors group-hover:text-white">
+                  {store.label}
+                  <ArrowUpRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                 </span>
               </motion.a>
             ))}

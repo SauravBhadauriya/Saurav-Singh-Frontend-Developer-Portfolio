@@ -1,8 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Button } from "@/components/ui/button";
-import { ArrowDown, Github, Linkedin, Mail, Download } from "lucide-react";
-import { Typewriter } from "react-simple-typewriter";
+import { ArrowDown, Github, Linkedin, Mail, Download, MapPin } from "lucide-react";
+import { HoverButton } from "@/components/ui/animated-link";
 
 export default function HeroSection() {
   const scrollToAbout = () => {
@@ -11,153 +10,101 @@ export default function HeroSection() {
   };
 
   return (
-    <section className="min-h-screen flex items-center relative overflow-hidden py-12 md:py-20">
-      {/* Background Image with Overlay */}
+    <section id="home" className="min-h-screen flex items-end relative overflow-hidden pt-32 pb-20 md:pb-28">
+      {/* Background image with a left-side scrim so the headline reads clearly */}
       <div
         className="absolute inset-0 -z-20"
         style={{
-          backgroundImage:
-            "url('https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=2070')",
+          backgroundImage: "url('/hero.png')",
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
-      >
-        <div className="absolute inset-0 bg-gradient-to-br from-slate-900/80 via-slate-800/80 to-slate-900/80 backdrop-blur-sm"></div>
-      </div>
+      />
+      <div className="absolute inset-0 -z-10 bg-gradient-to-r from-[#09090b] via-[#09090b]/70 to-[#09090b]/20" />
+      <div className="absolute inset-x-0 bottom-0 h-40 -z-10 bg-gradient-to-t from-[#09090b] to-transparent" />
 
       <div className="container mx-auto px-4">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-10">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-end">
           <motion.div
-            className="order-2 md:order-1 flex flex-col items-center md:items-start text-center md:text-left"
-            initial={{ opacity: 0, y: 20 }}
+            className="lg:col-span-8"
+            initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <motion.span
-              className="text-sky-400 text-lg md:text-xl mb-2"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.3, duration: 0.8 }}
-            >
-              Hello, I'm
-            </motion.span>
+            <h1 className="text-6xl sm:text-7xl lg:text-8xl font-semibold tracking-tighter leading-[0.95] text-white">
+              Saurav
+              <br />
+              Singh
+            </h1>
 
-            <motion.h1
-              className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 tracking-tight text-white"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.4, duration: 0.8 }}
-            >
-              <span className="gradient-text mr-4">Saurav</span>
-              <span className="gradient-text">Singh</span>
-            </motion.h1>
+            <p className="mt-6 text-xl md:text-2xl font-medium tracking-tight text-white">
+              Frontend Software Engineer &amp; Shopify/Web Expert
+            </p>
 
-            <motion.div
-              className="h-1 w-20 bg-sky-500 mb-6 hidden md:block"
-              initial={{ width: 0 }}
-              animate={{ width: 80 }}
-              transition={{ delay: 0.6, duration: 1 }}
-            />
+            <p className="mt-3 max-w-lg text-base md:text-lg leading-relaxed text-zinc-400">
+              3+ years of experience building modern web apps, Shopify storefronts, and React Native mobile apps.
+            </p>
 
-            <motion.p
-              className="text-lg md:text-xl lg:text-2xl text-gray-300 mb-8 max-w-2xl"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.6, duration: 0.8 }}
-            >
-              <Typewriter
-                words={[
-                  "Frontend Developer building modern web apps with React, Next.js & TypeScript, Shopify storefronts, and React Native mobile apps.",
-                ]}
-                loop={false}
-                cursor
-                cursorStyle="."
-                typeSpeed={50}
-                deleteSpeed={30}
-                delaySpeed={62000}
-              />
-            </motion.p>
+            <div className="mt-10 flex flex-wrap items-center gap-3">
+              <HoverButton onClick={scrollToAbout} icon={ArrowDown}>
+                Explore My Portfolio
+              </HoverButton>
 
-            <motion.div
-              className="flex flex-wrap justify-center md:justify-start gap-4 mb-8"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.8, duration: 0.8 }}
-            >
-           
-              <Button
-                onClick={scrollToAbout}
-                size="lg"
-                className="bg-sky-500 hover:bg-sky-600 text-white rounded-md px-8 py-6 font-medium"
+              <HoverButton href="/Saurav_Singh_Frontend_Developer_resume.pdf" download icon={Download}>
+                Download My Resume
+              </HoverButton>
+            </div>
+
+            <div className="mt-8 flex items-center gap-4">
+              <motion.a
+                href="https://github.com/SauravBhadauriya"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="GitHub"
+                className="bg-white/10 hover:bg-white/20 p-3 rounded-full text-white transition-colors duration-300"
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.95 }}
               >
-                Explore My Portfolio <ArrowDown className="ml-2" />
-              </Button>
-              <a href="/Saurav_Singh_Frontend_Developer_resume.pdf" download>
-              <Button
-                size="lg"
-                className="bg-white border-sky-500 hover:bg-sky-600 text-sky-500 hover:text-white rounded-md px-8 py-6 font-medium"
+                <Github size={20} />
+              </motion.a>
+              <motion.a
+                href="https://www.linkedin.com/in/saurav-singh-developer/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn"
+                className="bg-white/10 hover:bg-white/20 p-3 rounded-full text-white transition-colors duration-300"
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.95 }}
               >
-              Download My Resume <Download className="ml-2" />
-              </Button>
-              </a>
-            
-
-              <div className="flex items-center gap-4 mt-4 md:mt-0">
-                <motion.a
-                  href="https://github.com/SauravBhadauriya"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="bg-white/10 hover:bg-white/20 p-3 rounded-full text-white transition-colors duration-300"
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  <Github size={20} />
-                </motion.a>
-                <motion.a
-                  href="https://www.linkedin.com/in/saurav-singh-developer/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="bg-white/10 hover:bg-white/20 p-3 rounded-full text-white transition-colors duration-300"
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  <Linkedin size={20} />
-                </motion.a>
-                <motion.a
-                  href="mailto:sauravbhadauriya17@gmail.com"
-                  className="bg-white/10 hover:bg-white/20 p-3 rounded-full text-white transition-colors duration-300"
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  <Mail size={20} />
-                </motion.a>
-              </div>
-            </motion.div>
+                <Linkedin size={20} />
+              </motion.a>
+              <motion.a
+                href="mailto:sauravbhadauriya17@gmail.com"
+                aria-label="Email"
+                className="bg-white/10 hover:bg-white/20 p-3 rounded-full text-white transition-colors duration-300"
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <Mail size={20} />
+              </motion.a>
+            </div>
           </motion.div>
 
           <motion.div
-            className="order-1 md:order-2"
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1 }}
+            className="lg:col-span-4 lg:justify-self-end w-full max-w-xs rounded-2xl border border-zinc-800/80 bg-zinc-950/60 p-6 backdrop-blur-md"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
           >
-            <div className="relative">
-              <div className="absolute -inset-4 bg-sky-500/20 rounded-full blur-xl animate-pulse-slow"></div>
-              <div className="w-60 h-60 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-sky-400/30 relative z-10  mt-[30px] md:mt-auto">
-                <img
-                  src="/lovable-uploads/DP.png"
-                  alt="Saurav Singh"
-                  className=" object-cover"
-                />
-              </div>
+            <p className="mb-3 text-xs uppercase tracking-widest text-zinc-500">Currently</p>
+            <p className="font-medium text-white">Web Developer &amp; Manager</p>
+            <p className="mt-1 text-sm text-zinc-400">Cultre Boat</p>
+            <div className="mt-4 flex items-center gap-2 text-sm text-zinc-400">
+              <MapPin className="h-4 w-4" />
+              New Delhi, India
             </div>
           </motion.div>
         </div>
-      </div>
-
-      <div className="absolute inset-0 -z-10">
-        <div className="absolute top-1/4 left-1/4 w-48 h-48 bg-sky-400/10 rounded-full blur-3xl animate-blob"></div>
-        <div className="absolute top-2/3 right-1/4 w-56 h-56 bg-blue-400/10 rounded-full blur-3xl animate-blob animation-delay-2000"></div>
       </div>
     </section>
   );

@@ -7,25 +7,25 @@
 
 @layer base {
   :root {
-    --background: 210 40% 98%;
-    --foreground: 222 47% 11%;
-    --card: 0 0% 100%;
-    --card-foreground: 222 47% 11%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 222 47% 11%;
-    --primary: 199 89% 48%;
-    --primary-foreground: 0 0% 98%;
-    --secondary: 210 40% 96%;
-    --secondary-foreground: 222 47% 11%;
-    --muted: 210 40% 96%;
-    --muted-foreground: 215 16% 47%;
-    --accent: 210 40% 96%;
-    --accent-foreground: 222 47% 11%;
+    --background: 240 6% 4%;
+    --foreground: 0 0% 98%;
+    --card: 240 4% 8%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 4% 8%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 240 6% 10%;
+    --secondary: 240 4% 16%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 4% 16%;
+    --muted-foreground: 240 5% 65%;
+    --accent: 240 4% 16%;
+    --accent-foreground: 0 0% 98%;
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 98%;
-    --border: 214 32% 91%;
-    --input: 214 32% 91%;
-    --ring: 199 89% 48%;
+    --border: 240 4% 16%;
+    --input: 240 4% 16%;
+    --ring: 240 5% 65%;
     --radius: 0.5rem;
   }
 }
@@ -53,11 +53,11 @@
   }
   
   ::-webkit-scrollbar-thumb {
-    @apply bg-sky-200 rounded-full;
+    @apply bg-zinc-800 rounded-full;
   }
-  
+
   ::-webkit-scrollbar-thumb:hover {
-    @apply bg-sky-300;
+    @apply bg-zinc-600;
   }
   
   .project-card {
@@ -74,12 +74,7 @@
   }
 
   .section-heading {
-    @apply text-3xl md:text-4xl font-bold font-poppins relative inline-block mb-6;
-  }
-  
-  .section-heading::after {
-    content: '';
-    @apply absolute -bottom-3 left-0 right-0 mx-auto w-24 h-1 bg-sky-500 rounded-full;
+    @apply text-4xl md:text-6xl font-semibold tracking-tighter text-white mb-4;
   }
 
   .gradient-text {

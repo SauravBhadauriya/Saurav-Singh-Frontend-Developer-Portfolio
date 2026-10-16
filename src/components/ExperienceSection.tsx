@@ -1,8 +1,5 @@
-
 import React from "react";
-import { Card, CardContent } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { Briefcase, ExternalLink } from "lucide-react";
+import { ExternalLink } from "lucide-react";
 import { RevealOnScroll } from "./RevealAnimation";
 import { motion } from "framer-motion";
 
@@ -42,90 +39,66 @@ const experiences = [
 
 export default function ExperienceSection() {
   return (
-    <section id="experience" className="py-20 relative overflow-hidden">
-      <div className="absolute inset-0 -z-20">
-        <div className="absolute inset-0 bg-gradient-to-b from-white via-slate-50 to-white"></div>
-        <div className="absolute inset-0 bg-grid-pattern opacity-10"></div>
-      </div>
-
+    <section id="experience" className="py-24 md:py-32 border-t border-zinc-900">
       <div className="container mx-auto px-4">
-        <div className="max-w-4xl mx-auto mb-12 text-center">
+        <div className="max-w-3xl mx-auto mb-16 text-center">
           <RevealOnScroll>
-            <h2 className="section-heading text-center mx-auto">Experience</h2>
-            <p className="text-center text-slate-600 mb-12 max-w-2xl mx-auto">
+            <h2 className="section-heading mx-auto">Experience</h2>
+            <p className="text-zinc-400 max-w-2xl mx-auto">
               3+ years building web applications, Shopify storefronts, and mobile apps.
             </p>
           </RevealOnScroll>
         </div>
 
-        <div className="max-w-4xl mx-auto relative">
-          {/* Timeline line */}
-          <div className="absolute left-5 top-0 bottom-0 w-0.5 bg-sky-100 hidden md:block"></div>
-
-          <div className="space-y-8">
-            {experiences.map((exp, index) => (
-              <motion.div
-                key={exp.company}
-                className="relative md:pl-16"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.2 * index }}
-                viewport={{ once: true }}
-              >
-                <div className="absolute left-0 top-6 bg-sky-100 p-2.5 rounded-full hidden md:block">
-                  <Briefcase className="h-5 w-5 text-sky-600" />
+        <div className="max-w-4xl mx-auto space-y-6">
+          {experiences.map((exp, index) => (
+            <motion.article
+              key={exp.company}
+              className="rounded-2xl border border-zinc-800/80 bg-zinc-900/60 p-7 md:p-10 transition-colors duration-500 hover:border-zinc-600"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 * index }}
+              viewport={{ once: true }}
+            >
+              <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-4">
+                <div>
+                  <h3 className="text-2xl font-semibold tracking-tight text-white">{exp.role}</h3>
+                  <p className="mt-1 text-zinc-300">
+                    {exp.company} <span className="text-zinc-500">· {exp.location}</span>
+                  </p>
                 </div>
+                <div className="flex flex-col md:items-end gap-2">
+                  <span className="w-fit rounded-full border border-zinc-700 px-3 py-1 text-xs text-zinc-300">
+                    {exp.period}
+                  </span>
+                  <a
+                    href={exp.website.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1 text-sm text-zinc-400 transition-colors hover:text-white"
+                  >
+                    {exp.website.label} <ExternalLink className="h-3.5 w-3.5" />
+                  </a>
+                </div>
+              </div>
 
-                <Card className="border-none shadow-lg hover:shadow-xl transition-all duration-300 bg-white">
-                  <CardContent className="p-6 lg:p-8">
-                    <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-2 mb-4">
-                      <div>
-                        <h3 className="text-xl md:text-2xl font-semibold font-poppins text-slate-800">
-                          {exp.role}
-                        </h3>
-                        <p className="text-sky-700 font-medium">
-                          {exp.company} · <span className="text-slate-600 font-normal">{exp.location}</span>
-                        </p>
-                      </div>
-                      <div className="flex flex-col md:items-end gap-2">
-                        <Badge variant="outline" className="bg-sky-50 text-sky-600 w-fit">
-                          {exp.period}
-                        </Badge>
-                        <a
-                          href={exp.website.href}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-sm text-slate-500 hover:text-sky-600 transition-colors inline-flex items-center gap-1"
-                        >
-                          {exp.website.label} <ExternalLink className="h-3.5 w-3.5" />
-                        </a>
-                      </div>
-                    </div>
+              {exp.note && <p className="mt-4 text-sm italic text-zinc-500">{exp.note}</p>}
 
-                    {exp.note && (
-                      <p className="text-slate-500 italic text-sm mb-4">{exp.note}</p>
-                    )}
+              <ul className="mt-6 list-disc pl-5 space-y-2 text-sm md:text-base leading-relaxed text-zinc-400">
+                {exp.highlights.map((item, i) => (
+                  <li key={i}>{item}</li>
+                ))}
+              </ul>
 
-                    <ul className="list-disc pl-5 space-y-2 mb-6">
-                      {exp.highlights.map((item, i) => (
-                        <li key={i} className="text-slate-600">
-                          {item}
-                        </li>
-                      ))}
-                    </ul>
-
-                    <div className="flex flex-wrap gap-2">
-                      {exp.tags.map((tag) => (
-                        <Badge key={tag} className="bg-slate-100 text-slate-700 hover:bg-slate-200">
-                          {tag}
-                        </Badge>
-                      ))}
-                    </div>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            ))}
-          </div>
+              <div className="mt-6 flex flex-wrap gap-2">
+                {exp.tags.map((tag) => (
+                  <span key={tag} className="rounded-full border border-zinc-700 px-3 py-1 text-xs text-zinc-300">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </motion.article>
+          ))}
         </div>
       </div>
     </section>
