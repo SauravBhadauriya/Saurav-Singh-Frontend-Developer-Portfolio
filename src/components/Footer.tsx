@@ -13,6 +13,7 @@ const pages = [
 const socials = [
   { label: "github", href: "https://github.com/SauravBhadauriya" },
   { label: "linkedin", href: "https://www.linkedin.com/in/saurav-singh-developer/" },
+  { label: "instagram", href: "https://www.instagram.com/saurav_thakur17/" },
   { label: "whatsapp", href: WHATSAPP_URL },
   { label: "email", href: EMAIL_URL },
 ];
