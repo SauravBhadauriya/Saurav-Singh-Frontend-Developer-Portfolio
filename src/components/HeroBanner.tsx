@@ -49,9 +49,9 @@ const iconClass =
  */
 export default function HeroBanner({ title, subtitle, description, actions, aside, id }: HeroBannerProps) {
   return (
-    <section id={id} className="relative isolate flex min-h-[100svh] flex-col justify-center overflow-hidden pt-[clamp(112px,14vh,160px)] pb-[clamp(64px,10vh,120px)]">
+    <section id={id} className="relative isolate flex flex-col justify-center hero-fill overflow-hidden pt-[clamp(112px,14vh,160px)] pb-[clamp(64px,10vh,120px)]">
       <div
-        className="absolute inset-0 -z-20 bg-cover bg-[position:72%_center] md:bg-[position:70%_center]"
+        className="absolute inset-0 -z-20 bg-cover bg-[position:72%_center] md:bg-[position:64%_center] lg:bg-[position:70%_center]"
         style={{ backgroundImage: "url('/Profiles/hero.png')" }}
       />
       {/* Dark on the text side, fading to the photo; mobile uses a vertical fade */}
@@ -60,7 +60,7 @@ export default function HeroBanner({ title, subtitle, description, actions, asid
 
       <div className="site-container">
         <motion.div
-          className="flex flex-col items-start text-left lg:max-w-[min(56vw,760px)]"
+          className="flex flex-col items-start text-left md:max-w-[54vw] lg:max-w-[min(56vw,760px)]"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -90,24 +90,25 @@ export default function HeroBanner({ title, subtitle, description, actions, asid
                 ))}
               </div>
         </motion.div>
+
+        <motion.div
+          className="hero-aside"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.3 }}
+        >
+          <div className="hero-aside-card">
+            <p className="text-xs uppercase tracking-widest text-[rgba(255,255,255,0.7)]">{aside.label}</p>
+            <p className="font-medium text-white">{aside.title}</p>
+            <p className="text-sm text-zinc-400">{aside.detail}</p>
+            <div className="flex items-center gap-2 text-sm text-zinc-400">
+              <MapPin className="h-4 w-4" />
+              {aside.location}
+            </div>
+          </div>
+        </motion.div>
       </div>
 
-      <motion.div
-        className="hero-aside"
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.3 }}
-      >
-        <div className="hero-aside-card">
-          <p className="text-xs uppercase tracking-widest text-[rgba(255,255,255,0.7)]">{aside.label}</p>
-          <p className="font-medium text-white">{aside.title}</p>
-          <p className="text-sm text-zinc-400">{aside.detail}</p>
-          <div className="flex items-center gap-2 text-sm text-zinc-400">
-            <MapPin className="h-4 w-4" />
-            {aside.location}
-          </div>
-        </div>
-      </motion.div>
     </section>
   );
 }
