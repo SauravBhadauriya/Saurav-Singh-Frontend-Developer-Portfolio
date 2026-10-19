@@ -188,10 +188,11 @@ const Index = () => {
                     <div>
                       <h3 className="text-xl font-semibold tracking-tight text-white">{exp.role}</h3>
                       <p className="mt-1 text-sm text-zinc-300">
-                        {exp.company} <span className="text-zinc-500">· {exp.location}</span>
+                        {exp.company}
                       </p>
+                      <p className="text-sm text-zinc-500">{exp.location}</p>
                     </div>
-                    <span className="w-fit rounded-full border border-cyan-400/40 px-3 py-1 text-xs text-cyan-400">{exp.period}</span>
+                    <span className="w-fit whitespace-nowrap rounded-full border border-cyan-400/40 px-3 py-1 text-xs text-cyan-400">{exp.period}</span>
                   </div>
                   <ul className="mt-5 list-disc space-y-2 pl-5 text-sm leading-relaxed text-zinc-400">
                     {exp.highlights.slice(0, 2).map((item, i) => (
