@@ -102,7 +102,7 @@ export default function Work() {
         title="Selected Work"
         subtitle="Passionate about clean code & scale"
         description="Shopify storefronts, a React Native app and web platforms I have built and contributed to."
-        aside={{ label: "Experience", title: "3+ years of client work", detail: "Shopify, React & React Native", location: "New Delhi, India" }}
+        aside={{ label: "Experience", title: "14+ Shopify stores", detail: "Shopify, React & React Native", location: "New Delhi, India" }}
         actions={
           <>
             <HoverButton href={WHATSAPP_URL} external icon={ArrowRight}>
@@ -116,14 +116,14 @@ export default function Work() {
       />
 
       {/* ---------- 2. Featured showcase ---------- */}
-      <section className="bg-zinc-950 px-4 py-24 md:py-32">
+      <section className="bg-zinc-950 px-4 py-[var(--space-8)]">
         <div className="container mx-auto max-w-6xl space-y-12">
           {/* Full-width featured projects */}
           {first && <FeaturedProject project={first} index={0} />}
           {second && <FeaturedProject project={second} index={1} />}
 
           {/* Multi-column grid */}
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-[var(--space-4)] md:gap-[var(--space-5)] md:grid-cols-2 lg:grid-cols-3">
             {third && (
               <motion.a
                 href={third.links[0]?.href}

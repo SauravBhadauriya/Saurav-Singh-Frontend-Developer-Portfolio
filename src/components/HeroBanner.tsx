@@ -38,7 +38,8 @@ const socials = [
   { label: "Email", href: EMAIL_URL, icon: Mail },
 ];
 
-const iconClass = "rounded-full bg-white/10 p-3 text-cyan-400 transition-colors duration-300 hover:bg-white/20";
+const iconClass =
+  "rounded-full border border-[rgba(255,255,255,0.14)] bg-[rgba(20,20,24,0.75)] p-3 text-cyan-400 backdrop-blur-[10px] transition-colors duration-300 hover:bg-[rgba(40,40,46,0.9)]";
 
 /**
  * Shared dark hero used on every page, so the layout is identical everywhere
@@ -48,75 +49,65 @@ const iconClass = "rounded-full bg-white/10 p-3 text-cyan-400 transition-colors 
  */
 export default function HeroBanner({ title, subtitle, description, actions, aside, id }: HeroBannerProps) {
   return (
-    <section id={id} className="relative isolate flex min-h-screen items-end overflow-hidden pt-28 pb-16 sm:pt-32 md:pb-28">
+    <section id={id} className="relative isolate flex min-h-[100svh] flex-col justify-center overflow-hidden pt-[clamp(112px,14vh,160px)] pb-[clamp(64px,10vh,120px)]">
       <div
-        className="absolute inset-0 -z-20 bg-cover bg-[position:72%_center] md:bg-center"
+        className="absolute inset-0 -z-20 bg-cover bg-[position:72%_center] md:bg-[position:70%_center]"
         style={{ backgroundImage: "url('/Profiles/hero.png')" }}
       />
-      {/* Mobile: darker fade from the bottom, where the text sits */}
-      <div className="absolute inset-0 -z-10 bg-gradient-to-b from-[#09090b]/20 via-[#09090b]/60 to-[#09090b] md:hidden" />
-      {/* Desktop: dark fade on the left so the text reads, clear over the photo */}
-      <div
-        className="absolute inset-0 -z-10 hidden md:block"
-        style={{
-          background:
-            "linear-gradient(to right, rgba(9,9,11,0.97) 0%, rgba(9,9,11,0.9) 20%, rgba(9,9,11,0.7) 35%, rgba(9,9,11,0.4) 50%, rgba(9,9,11,0.15) 62%, rgba(9,9,11,0) 72%)",
-        }}
-      />
-      <div className="absolute inset-x-0 bottom-0 -z-10 h-24 bg-gradient-to-t from-[#09090b] to-transparent md:h-40" />
+      {/* Dark on the text side, fading to the photo; mobile uses a vertical fade */}
+      <div className="hero-overlay" />
+      <div className="hero-bottom-fade" />
 
-      <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 items-end gap-10 lg:grid-cols-12">
-          <motion.div
-            className="lg:col-span-8"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            <h1 className="text-5xl font-semibold leading-[0.95] tracking-tighter text-white sm:text-7xl lg:text-8xl">
-              {title}
-            </h1>
+      <div className="site-container">
+        <motion.div
+          className="flex flex-col items-start text-left lg:max-w-[min(56vw,760px)]"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+        >
+            <h1 className="display-heading mb-[clamp(24px,3vw,40px)]">
+                {title}
+              </h1>
 
-            <p className="mt-5 text-lg font-medium tracking-tight text-white sm:text-xl md:mt-6 md:text-2xl">{subtitle}</p>
+              <p className="mb-[var(--space-3)] text-lg font-medium tracking-tight text-white sm:text-xl md:text-2xl">{subtitle}</p>
 
-            <p className="mt-3 max-w-lg text-sm leading-relaxed text-zinc-300 sm:text-base md:text-lg md:text-zinc-400">{description}</p>
+              <p className="mb-[var(--space-5)] max-w-[560px] text-sm leading-[1.6] text-[rgba(255,255,255,0.82)] [text-shadow:0_1px_12px_rgba(0,0,0,0.45)] sm:text-base md:text-lg">{description}</p>
 
-            {actions && <div className="mt-8 flex flex-wrap items-center gap-3 md:mt-10">{actions}</div>}
+              {actions && <div className="mb-[var(--space-5)] flex flex-wrap items-center gap-[var(--space-3)]">{actions}</div>}
 
-            <div className="mt-6 flex flex-wrap items-center gap-3 md:mt-8 md:gap-4">
-              {socials.map((item) => (
-                <a
-                  key={item.label}
-                  href={item.href}
-                  target={item.href.startsWith("http") ? "_blank" : undefined}
-                  rel={item.href.startsWith("http") ? "noopener noreferrer" : undefined}
-                  aria-label={item.label}
-                  className={iconClass}
-                >
-                  <item.icon size={20} />
-                </a>
-              ))}
-            </div>
-          </motion.div>
-
-          <motion.div
-            className="w-full max-w-xs lg:col-span-4 lg:justify-self-end"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-          >
-            <div className="rounded-2xl border border-zinc-800/80 bg-zinc-950/60 p-6 backdrop-blur-md">
-              <p className="mb-3 text-xs uppercase tracking-widest text-zinc-500">{aside.label}</p>
-              <p className="font-medium text-white">{aside.title}</p>
-              <p className="mt-1 text-sm text-zinc-400">{aside.detail}</p>
-              <div className="mt-4 flex items-center gap-2 text-sm text-zinc-400">
-                <MapPin className="h-4 w-4" />
-                {aside.location}
+              <div className="flex flex-wrap items-center gap-[var(--space-3)]">
+                {socials.map((item) => (
+                  <a
+                    key={item.label}
+                    href={item.href}
+                    target={item.href.startsWith("http") ? "_blank" : undefined}
+                    rel={item.href.startsWith("http") ? "noopener noreferrer" : undefined}
+                    aria-label={item.label}
+                    className={iconClass}
+                  >
+                    <item.icon size={20} />
+                  </a>
+                ))}
               </div>
-            </div>
-          </motion.div>
-        </div>
+        </motion.div>
       </div>
+
+      <motion.div
+        className="hero-aside"
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.3 }}
+      >
+        <div className="hero-aside-card">
+          <p className="text-xs uppercase tracking-widest text-[rgba(255,255,255,0.7)]">{aside.label}</p>
+          <p className="font-medium text-white">{aside.title}</p>
+          <p className="text-sm text-zinc-400">{aside.detail}</p>
+          <div className="flex items-center gap-2 text-sm text-zinc-400">
+            <MapPin className="h-4 w-4" />
+            {aside.location}
+          </div>
+        </div>
+      </motion.div>
     </section>
   );
 }

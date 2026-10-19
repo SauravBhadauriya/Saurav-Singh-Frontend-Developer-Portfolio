@@ -27,6 +27,20 @@
     --input: 240 4% 16%;
     --ring: 240 5% 65%;
     --radius: 0.5rem;
+    --font-display: "Anton", sans-serif;
+
+    --hero-overlay: linear-gradient(90deg, rgba(10, 10, 12, 0.96) 0%, rgba(10, 10, 12, 0.9) 30%, rgba(10, 10, 12, 0.65) 50%, rgba(10, 10, 12, 0.25) 68%, rgba(10, 10, 12, 0) 85%);
+    --hero-overlay-mobile: linear-gradient(180deg, rgba(10, 10, 12, 0.95) 0%, rgba(10, 10, 12, 0.85) 60%, rgba(10, 10, 12, 0.55) 100%);
+    --hero-bottom-fade: linear-gradient(180deg, rgba(10, 10, 12, 0) 60%, rgba(10, 10, 12, 0.9) 100%);
+
+    --space-1: 8px;
+    --space-2: 12px;
+    --space-3: 16px;
+    --space-4: 24px;
+    --space-5: 32px;
+    --space-6: 48px;
+    --space-7: 64px;
+    --space-8: clamp(72px, 10vw, 120px);
   }
 }
 
@@ -177,5 +191,97 @@
   
   .animate-pulse-slow {
     animation: pulse 3s ease-in-out infinite;
+  }
+}
+
+/* Shared page container: navbar and hero use the same edges */
+@layer components {
+  .site-container {
+    width: 100%;
+    max-width: 1280px;
+    margin-inline: auto;
+    padding-inline: clamp(16px, 4vw, 48px);
+  }
+
+  /* Hero card: anchored to the hero section, same spot on every page */
+  .hero-aside {
+    position: relative;
+    width: 100%;
+    max-width: calc(100vw - 32px);
+    margin-top: 32px;
+  }
+
+  /* Shared hero overlays: dark behind the text, fading to the photo */
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: -10;
+    pointer-events: none;
+    background: var(--hero-overlay-mobile);
+  }
+
+  .hero-bottom-fade {
+    position: absolute;
+    inset-inline: 0;
+    bottom: 0;
+    z-index: -10;
+    pointer-events: none;
+    height: 96px;
+    background: var(--hero-bottom-fade);
+  }
+
+  @media (min-width: 768px) {
+    .hero-overlay {
+      background: var(--hero-overlay);
+    }
+
+    .hero-bottom-fade {
+      height: 160px;
+    }
+  }
+
+  .hero-aside-card {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+    padding: var(--space-4);
+    border-radius: 1rem;
+    border: 1px solid rgb(39 39 42 / 0.8);
+    background: rgb(10 10 12 / 0.82);
+    backdrop-filter: blur(14px);
+  }
+
+  @media (min-width: 1024px) {
+    .hero-aside {
+      position: absolute;
+      bottom: clamp(32px, 6vh, 64px);
+      right: calc(max(0px, (100% - 1280px) / 2) + clamp(16px, 4vw, 48px));
+      width: 340px;
+      margin-top: 0;
+    }
+  }
+
+  @media (min-width: 1024px) and (max-height: 800px) {
+    .hero-aside-card {
+      padding: var(--space-3);
+      gap: 4px;
+    }
+  }
+
+  /* Display headings: Anton, sized with clamp() */
+  .display-heading {
+    font-family: var(--font-display);
+    font-size: clamp(56px, 8vw, 112px);
+    overflow-wrap: break-word;
+    text-wrap: balance;
+    font-weight: 400;
+    line-height: 1.05;
+    letter-spacing: 0.01em;
+    text-transform: none;
+    color: #ffffff;
+    user-select: none;
+    display: block;
+    margin: 0;
+    padding-left: 0;
   }
 }

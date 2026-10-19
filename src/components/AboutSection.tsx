@@ -10,9 +10,9 @@ export const details = [
 
 export default function AboutSection() {
   return (
-    <section id="about" className="py-24 md:py-32 border-t border-zinc-900">
+    <section id="about" className="py-[var(--space-8)] border-t border-zinc-900">
       <div className="container mx-auto px-4">
-        <div className="max-w-3xl mx-auto mb-16 text-center">
+        <div className="max-w-3xl mx-auto mb-[var(--space-6)] text-center">
           <RevealOnScroll>
             <h2 className="section-heading mx-auto">About Me</h2>
             <p className="text-zinc-400 max-w-2xl mx-auto">
@@ -22,9 +22,9 @@ export default function AboutSection() {
           </RevealOnScroll>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-[var(--space-4)] md:gap-[var(--space-5)]">
           <SlideInFromLeft width="100%" delay={0.3} className="lg:col-span-7">
-            <div className="h-full rounded-2xl border border-zinc-800/80 bg-zinc-900/60 p-7 lg:p-10 transition-colors duration-500 hover:border-zinc-600">
+            <div className="h-full rounded-2xl border border-zinc-800/80 bg-zinc-900/60 p-[var(--space-4)] md:p-[var(--space-5)] lg:p-10 transition-colors duration-500 hover:border-zinc-600">
               <div className="space-y-5 text-base lg:text-lg leading-relaxed text-zinc-300">
                 <motion.p
                   initial={{ opacity: 0 }}
@@ -59,7 +59,7 @@ export default function AboutSection() {
           </SlideInFromLeft>
 
           <SlideInFromRight width="100%" delay={0.5} className="lg:col-span-5">
-            <div className="h-full rounded-2xl border border-zinc-800/80 bg-zinc-900/60 p-7 lg:p-10 transition-colors duration-500 hover:border-zinc-600">
+            <div className="h-full rounded-2xl border border-zinc-800/80 bg-zinc-900/60 p-[var(--space-4)] md:p-[var(--space-5)] lg:p-10 transition-colors duration-500 hover:border-zinc-600">
               <h3 className="text-xl md:text-2xl font-semibold tracking-tight text-white mb-8">Personal Details</h3>
 
               <div className="space-y-6">

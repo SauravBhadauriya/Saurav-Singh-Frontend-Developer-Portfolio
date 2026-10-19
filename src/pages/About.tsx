@@ -19,21 +19,6 @@ const stats = [
   { value: "12+", label: "reusable, responsive UI components" },
 ];
 
-const workflow = [
-  { step: "01", title: "Understand the goal", body: "Who uses it, what success looks like, and the constraints on time and platform." },
-  { step: "02", title: "Plan the structure", body: "Break the UI into reusable components and agree on state, data and routing up front." },
-  { step: "03", title: "Build in small pieces", body: "Ship working slices early, keeping components typed and easy to change." },
-  { step: "04", title: "Measure and polish", body: "Check performance, accessibility and SEO before anything goes live." },
-  { step: "05", title: "Ship and iterate", body: "Deploy, watch real usage, and fix or refine based on what the data shows." },
-];
-
-const principles = [
-  "Clean architecture: small components, clear data flow, no hidden state.",
-  "Performance first: lazy loading, code splitting and lean bundles.",
-  "SEO and accessibility are part of the build, not an afterthought.",
-  "Readable, tested code that the next developer can change safely.",
-];
-
 const reveal = {
   initial: { opacity: 0, y: 30 },
   whileInView: { opacity: 1, y: 0 },
@@ -72,11 +57,11 @@ export default function About() {
       />
 
       {/* ---------- Stats ---------- */}
-      <section className="px-4 py-24 md:py-32">
+      <section className="px-4 py-[var(--space-8)]">
         <div className="container mx-auto max-w-5xl">
           <motion.div {...reveal} className="grid grid-cols-2 gap-4 md:grid-cols-4">
             {stats.map((stat) => (
-              <div key={stat.label} className="rounded-2xl border border-zinc-800/80 bg-zinc-900/60 p-6">
+              <div key={stat.label} className="rounded-2xl border border-zinc-800/80 bg-zinc-900/60 p-[var(--space-4)] md:p-[var(--space-5)]">
                 <p className="text-4xl font-semibold tracking-tighter text-cyan-400 md:text-5xl">{stat.value}</p>
                 <p className="mt-2 text-sm leading-relaxed text-zinc-400">{stat.label}</p>
               </div>
@@ -88,7 +73,7 @@ export default function About() {
       {/* ---------- About & personal details ---------- */}
       <section className="px-4 pb-24 md:pb-32">
         <div className="container mx-auto max-w-5xl">
-          <motion.div {...reveal} className="mb-12 max-w-2xl">
+          <motion.div {...reveal} className="mb-[var(--space-6)] max-w-2xl">
             <h2 className={sectionTitle}>Frontend-focused developer</h2>
             <p className="mt-4 text-zinc-400">
               Frontend-focused Software Developer with 3+ years of experience building modern web applications,
@@ -96,10 +81,10 @@ export default function About() {
             </p>
           </motion.div>
 
-          <div className="grid gap-6 lg:grid-cols-12">
+          <div className="grid gap-[var(--space-4)] md:gap-[var(--space-5)] lg:grid-cols-12">
             <motion.div
               {...reveal}
-              className="space-y-5 rounded-2xl border border-zinc-800/80 bg-zinc-900/60 p-7 text-base leading-relaxed text-zinc-300 lg:col-span-7 lg:p-10 lg:text-lg"
+              className="space-y-5 rounded-2xl border border-zinc-800/80 bg-zinc-900/60 p-[var(--space-4)] md:p-[var(--space-5)] text-base leading-relaxed text-zinc-300 lg:col-span-7 lg:p-10 lg:text-lg"
             >
               <p>
                 I am a frontend-focused software developer with 3+ years of experience building modern web
@@ -116,7 +101,7 @@ export default function About() {
               </p>
             </motion.div>
 
-            <motion.div {...reveal} className="rounded-2xl border border-zinc-800/80 bg-zinc-900/60 p-7 lg:col-span-5 lg:p-10">
+            <motion.div {...reveal} className="rounded-2xl border border-zinc-800/80 bg-zinc-900/60 p-[var(--space-4)] md:p-[var(--space-5)] lg:col-span-5 lg:p-10">
               <h3 className="mb-8 text-xl font-semibold tracking-tight text-white md:text-2xl">Personal Details</h3>
               <div className="space-y-6">
                 {details.map((item) => (
@@ -139,16 +124,16 @@ export default function About() {
       {/* ---------- Skills & expertise ---------- */}
       <section className="px-4 pb-24 md:pb-32">
         <div className="container mx-auto max-w-5xl">
-          <motion.div {...reveal} className="mb-12">
+          <motion.div {...reveal} className="mb-[var(--space-6)]">
             <h2 className={sectionTitle}>Skills &amp; Expertise</h2>
             <p className="mt-4 max-w-2xl text-zinc-400">
               Specialized in modern frontend technologies and frameworks to create exceptional user experiences.
             </p>
           </motion.div>
 
-          <div className="grid gap-6 md:grid-cols-2">
+          <div className="grid gap-[var(--space-4)] md:gap-[var(--space-5)] md:grid-cols-2">
             {skillCategories.map((category) => (
-              <motion.div key={category.title} {...reveal} className="rounded-2xl border border-zinc-800/80 bg-zinc-900/60 p-7">
+              <motion.div key={category.title} {...reveal} className="rounded-2xl border border-zinc-800/80 bg-zinc-900/60 p-[var(--space-4)] md:p-[var(--space-5)]">
                 <h3 className="mb-5 border-b border-zinc-800 pb-3 text-lg font-semibold tracking-tight text-white">
                   {category.title}
                 </h3>
@@ -182,7 +167,7 @@ export default function About() {
       {/* ---------- Experience ---------- */}
       <section className="px-4 pb-24 md:pb-32">
         <div className="container mx-auto max-w-4xl">
-          <motion.div {...reveal} className="mb-12">
+          <motion.div {...reveal} className="mb-[var(--space-6)]">
             <h2 className={sectionTitle}>Experience</h2>
             <p className="mt-4 text-zinc-400">3+ years building web applications, Shopify storefronts, and mobile apps.</p>
           </motion.div>
@@ -192,7 +177,7 @@ export default function About() {
               <motion.article
                 key={exp.company}
                 {...reveal}
-                className="rounded-2xl border border-zinc-800/80 bg-zinc-900/60 p-7 md:p-10"
+                className="rounded-2xl border border-zinc-800/80 bg-zinc-900/60 p-[var(--space-4)] md:p-[var(--space-5)] md:p-10"
               >
                 <div className="flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
                   <div>
@@ -240,17 +225,17 @@ export default function About() {
       {/* ---------- Education ---------- */}
       <section className="px-4 pb-24 md:pb-32">
         <div className="container mx-auto max-w-5xl">
-          <motion.div {...reveal} className="mb-12">
+          <motion.div {...reveal} className="mb-[var(--space-6)]">
             <h2 className={sectionTitle}>Education &amp; Awards</h2>
             <p className="mt-4 text-zinc-400">My academic journey and professional recognition.</p>
           </motion.div>
 
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
+          <div className="grid grid-cols-1 gap-[var(--space-4)] md:gap-[var(--space-5)] md:grid-cols-3">
             {education.map((edu) => (
               <motion.article
                 key={`${edu.degree}-${edu.period}`}
                 {...reveal}
-                className="flex h-full flex-col rounded-2xl border border-zinc-800/80 bg-zinc-900/60 p-7"
+                className="flex h-full flex-col rounded-2xl border border-zinc-800/80 bg-zinc-900/60 p-[var(--space-4)] md:p-[var(--space-5)]"
               >
                 <div className="mb-6 w-fit rounded-full border border-zinc-800 bg-zinc-950 p-3">
                   <GraduationCap className="h-6 w-6 text-cyan-400" />
@@ -269,51 +254,14 @@ export default function About() {
         </div>
       </section>
 
-      {/* ---------- How I work ---------- */}
-      <section className="px-4 pb-24 md:pb-32">
-        <div className="container mx-auto max-w-5xl">
-          <motion.div {...reveal}>
-            <span className="inline-flex items-center gap-2 rounded-full border border-zinc-800 bg-zinc-900/60 px-4 py-1.5 text-xs font-medium uppercase tracking-widest text-zinc-300"><span className="h-1.5 w-1.5 rounded-full bg-cyan-400" />How I work</span>
-            <h2 className={sectionTitle}>From brief to release</h2>
-          </motion.div>
-          <ol className="mt-10 divide-y divide-zinc-800 rounded-2xl border border-zinc-800/80 bg-zinc-900/60">
-            {workflow.map((item) => (
-              <motion.li key={item.step} {...reveal} className="grid gap-2 p-6 md:grid-cols-12 md:gap-8">
-                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-cyan-400/40 text-xs font-medium tabular-nums text-cyan-400 md:col-span-1">{item.step}</span>
-                <h3 className="text-lg font-semibold text-white md:col-span-4">{item.title}</h3>
-                <p className="text-sm leading-relaxed text-zinc-400 md:col-span-7">{item.body}</p>
-              </motion.li>
-            ))}
-          </ol>
-        </div>
-      </section>
-
-      {/* ---------- Principles ---------- */}
-      <section className="px-4 pb-24 md:pb-32">
-        <div className="container mx-auto max-w-5xl">
-          <motion.div {...reveal} className="rounded-2xl border border-zinc-800/80 bg-zinc-900/60 p-8 md:p-12">
-            <span className="inline-flex items-center gap-2 rounded-full border border-zinc-800 bg-zinc-900/60 px-4 py-1.5 text-xs font-medium uppercase tracking-widest text-zinc-300"><span className="h-1.5 w-1.5 rounded-full bg-cyan-400" />Principles</span>
-            <ul className="mt-6 space-y-4">
-              {principles.map((principle) => (
-                <li key={principle} className="flex gap-3 text-base leading-relaxed text-zinc-300 md:text-lg">
-                  <span className="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-cyan-400" />
-                  <span>{principle}</span>
-                </li>
-              ))}
-            </ul>
-          </motion.div>
-        </div>
-      </section>
-
       {/* ---------- Currently ---------- */}
       <section className="px-4 pb-24 md:pb-32">
         <div className="container mx-auto max-w-5xl">
           <motion.div
             {...reveal}
-            className="grid gap-6 rounded-2xl border border-zinc-800/80 bg-zinc-900/60 p-8 md:grid-cols-2 md:p-12"
+            className="grid gap-[var(--space-4)] md:gap-[var(--space-5)] rounded-2xl border border-zinc-800/80 bg-zinc-900/60 p-8 md:grid-cols-2 md:p-12"
           >
             <div>
-              <span className="inline-flex items-center gap-2 rounded-full border border-zinc-800 bg-zinc-900/60 px-4 py-1.5 text-xs font-medium uppercase tracking-widest text-zinc-300"><span className="h-1.5 w-1.5 rounded-full bg-cyan-400" />Currently</span>
               <p className="mt-3 text-2xl font-semibold tracking-tight text-white">Web Developer &amp; Manager</p>
               <p className="mt-1 text-zinc-400">Cultre Boat · New Delhi, India</p>
             </div>

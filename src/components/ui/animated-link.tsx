@@ -86,7 +86,7 @@ export function HoverButton({
   const styles =
     variant === "solid"
       ? "bg-white text-zinc-950 hover:bg-zinc-200"
-      : "border border-white/10 bg-white/10 text-white hover:border-white/20 hover:bg-white/20";
+      : "border border-[rgba(255,255,255,0.14)] bg-[rgba(20,20,24,0.75)] text-white backdrop-blur-[10px] hover:bg-[rgba(40,40,46,0.9)]";
   const classes = cn(base, styles, className);
 
   const content = (

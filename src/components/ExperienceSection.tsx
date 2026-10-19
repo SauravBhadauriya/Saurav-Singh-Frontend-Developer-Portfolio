@@ -38,9 +38,9 @@ export const experiences = [
 
 export default function ExperienceSection() {
   return (
-    <section id="experience" className="py-24 md:py-32 border-t border-zinc-900">
+    <section id="experience" className="py-[var(--space-8)] border-t border-zinc-900">
       <div className="container mx-auto px-4">
-        <div className="max-w-3xl mx-auto mb-16 text-center">
+        <div className="max-w-3xl mx-auto mb-[var(--space-6)] text-center">
           <RevealOnScroll>
             <h2 className="section-heading mx-auto">Experience</h2>
             <p className="text-zinc-400 max-w-2xl mx-auto">
@@ -53,7 +53,7 @@ export default function ExperienceSection() {
           {experiences.map((exp, index) => (
             <motion.article
               key={exp.company}
-              className="rounded-2xl border border-zinc-800/80 bg-zinc-900/60 p-7 md:p-10 transition-colors duration-500 hover:border-zinc-600"
+              className="rounded-2xl border border-zinc-800/80 bg-zinc-900/60 p-[var(--space-4)] md:p-[var(--space-5)] md:p-10 transition-colors duration-500 hover:border-zinc-600"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 * index }}

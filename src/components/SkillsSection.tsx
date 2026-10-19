@@ -45,9 +45,9 @@ export const strengths = [
 
 export default function SkillsSection() {
   return (
-    <section id="skills" className="py-24 md:py-32 border-t border-zinc-900">
+    <section id="skills" className="py-[var(--space-8)] border-t border-zinc-900">
       <div className="container mx-auto px-4">
-        <div className="max-w-3xl mx-auto mb-16 text-center">
+        <div className="max-w-3xl mx-auto mb-[var(--space-6)] text-center">
           <RevealOnScroll>
             <h2 className="section-heading mx-auto">Skills &amp; Expertise</h2>
             <p className="text-zinc-400 max-w-2xl mx-auto">
@@ -57,10 +57,10 @@ export default function SkillsSection() {
           </RevealOnScroll>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-6">
+        <div className="grid md:grid-cols-2 gap-[var(--space-4)] md:gap-[var(--space-5)]">
           {skillCategories.map((category, index) => (
             <RevealOnScroll key={category.title} delay={0.1 * index}>
-              <div className="h-full rounded-2xl border border-zinc-800/80 bg-zinc-900/60 p-7 transition-colors duration-500 hover:border-zinc-600">
+              <div className="h-full rounded-2xl border border-zinc-800/80 bg-zinc-900/60 p-[var(--space-4)] md:p-[var(--space-5)] transition-colors duration-500 hover:border-zinc-600">
                 <h3 className="mb-5 pb-3 border-b border-zinc-800 text-lg font-semibold tracking-tight text-white">
                   {category.title}
                 </h3>

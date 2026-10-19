@@ -110,9 +110,9 @@ export default function ProjectsSection() {
   }, [showStorefronts]);
 
   return (
-    <section id="projects" className="py-24 md:py-32 border-t border-zinc-900">
+    <section id="projects" className="py-[var(--space-8)] border-t border-zinc-900">
       <div className="container mx-auto px-4">
-        <div className="max-w-3xl mx-auto mb-16 text-center">
+        <div className="max-w-3xl mx-auto mb-[var(--space-6)] text-center">
           <RevealOnScroll>
             <h2 className="section-heading mx-auto">Featured Projects</h2>
             <p className="text-zinc-400 max-w-2xl mx-auto">
@@ -121,7 +121,7 @@ export default function ProjectsSection() {
           </RevealOnScroll>
         </div>
 
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-[var(--space-4)] md:gap-[var(--space-5)] md:grid-cols-2 lg:grid-cols-3">
           {projects.map((project, index) => {
             const Icon = project.icon;
             return (
@@ -157,7 +157,7 @@ export default function ProjectsSection() {
                   )}
                 </div>
 
-                <div className="flex flex-1 flex-col p-7">
+                <div className="flex flex-1 flex-col p-[var(--space-4)] md:p-[var(--space-5)]">
                   <h3 className="text-2xl font-semibold tracking-tight text-white">{project.title}</h3>
                   <p className="mt-3 text-sm leading-relaxed text-zinc-400">{project.description}</p>
 
@@ -240,7 +240,7 @@ export default function ProjectsSection() {
                 href={store.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group block rounded-2xl border border-zinc-800/80 bg-zinc-900/60 p-6 transition-colors duration-300 hover:border-zinc-600"
+                className="group block rounded-2xl border border-zinc-800/80 bg-zinc-900/60 p-[var(--space-4)] md:p-[var(--space-5)] transition-colors duration-300 hover:border-zinc-600"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: 0.05 * (index % 6) }}

@@ -15,8 +15,8 @@ type ConnectCard = {
 };
 
 export const connectCards: ConnectCard[] = [
-  { label: "LinkedIn", value: "Professional profile", icon: Linkedin, href: "https://www.linkedin.com/in/saurav-singh-developer/" },
-  { label: "GitHub", value: "Code & projects", icon: Github, href: "https://github.com/SauravBhadauriya" },
+  { label: "LinkedIn", value: "linkedin.com/in/saurav-singh-developer", icon: Linkedin, href: "https://www.linkedin.com/in/saurav-singh-developer/" },
+  { label: "GitHub", value: "github.com/SauravBhadauriya", icon: Github, href: "https://github.com/SauravBhadauriya" },
   { label: "Email", value: EMAIL, icon: Mail, href: EMAIL_URL },
   { label: "Instagram", value: "@saurav_thakur17", icon: Instagram, href: "https://www.instagram.com/saurav_thakur17/" },
   { label: "WhatsApp", value: `+91 ${WHATSAPP_NUMBER}`, icon: WhatsAppIcon, href: WHATSAPP_URL },
@@ -24,7 +24,7 @@ export const connectCards: ConnectCard[] = [
 ];
 
 export const cardClass =
-  "group flex h-full flex-col rounded-2xl border border-zinc-800/80 bg-zinc-900/60 p-7 text-left transition-colors duration-500 hover:border-zinc-600";
+  "group flex h-full flex-col rounded-2xl border border-zinc-800/80 bg-zinc-900/60 p-[var(--space-4)] md:p-[var(--space-5)] text-left transition-colors duration-500 hover:border-zinc-600";
 
 export function CardBody({ card }: { card: ConnectCard }) {
   return (
@@ -45,7 +45,7 @@ export function CardBody({ card }: { card: ConnectCard }) {
 export default function ConnectGrid() {
   return (
     <>
-      <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="grid grid-cols-1 gap-[var(--space-4)] md:gap-[var(--space-5)] sm:grid-cols-2 lg:grid-cols-3">
         {connectCards.map((card, index) => {
           const motionProps = {
             initial: { opacity: 0, y: 30 },

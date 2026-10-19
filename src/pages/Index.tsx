@@ -7,6 +7,8 @@ import HeroSection from "@/components/HeroSection";
 import Footer from "@/components/Footer";
 import { CardBody, cardClass, connectCards } from "@/components/ConnectGrid";
 import { projects } from "@/components/ProjectsSection";
+import { skillCategories } from "@/components/SkillsSection";
+import { experiences } from "@/components/ExperienceSection";
 
 const aboutHighlights = [
   { title: "3+ years", body: "Building production frontends for web apps, Shopify stores and mobile apps." },
@@ -14,18 +16,24 @@ const aboutHighlights = [
   { title: "Core stack", body: "React, Next.js, TypeScript, Tailwind CSS, Shopify (Liquid) and React Native." },
 ];
 
+const homeStats = [
+  { value: "3+", label: "years building production frontends" },
+  { value: "14+", label: "Shopify stores built and customised" },
+  { value: "30%", label: "faster load time on a React/Next.js app" },
+  { value: "12+", label: "reusable, responsive UI components" },
+];
+
+const skillPreview = skillCategories.slice(0, 4);
+const experiencePreview = experiences.slice(0, 2);
+
 const previewConnect = ["LinkedIn", "WhatsApp", "Email"].map((label) => connectCards.find((card) => card.label === label)!);
 
-const sectionShell = "border-t border-zinc-900 bg-[#09090b] px-4 py-24 md:py-32";
+const sectionShell = "border-t border-zinc-900 bg-[#09090b] px-4 py-[var(--space-8)]";
 
-function SectionHeader({ label, title, description, to }: { label: string; title: string; description: string; to: string }) {
+function SectionHeader({ title, description, to }: { title: string; description: string; to: string }) {
   return (
-    <div className="mb-12 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+    <div className="mb-[var(--space-6)] flex flex-col gap-[var(--space-4)] md:gap-[var(--space-5)] md:flex-row md:items-end md:justify-between">
       <div>
-        <p className="inline-flex items-center gap-2 rounded-full border border-zinc-800 bg-zinc-900/60 px-4 py-1.5 text-xs font-medium uppercase tracking-widest text-zinc-300">
-          <span className="h-1.5 w-1.5 rounded-full bg-cyan-400" />
-          {label}
-        </p>
         <h2 className="mt-4 text-3xl font-semibold tracking-tighter text-white md:text-4xl">{title}</h2>
         <p className="mt-4 max-w-2xl text-zinc-400">{description}</p>
       </div>
@@ -61,16 +69,27 @@ const Index = () => {
       <main>
         <HeroSection />
 
+        {/* ---------- Stats ---------- */}
+        <section className="bg-[#09090b] px-4 py-16">
+          <div className="container mx-auto grid max-w-5xl grid-cols-2 gap-4 md:grid-cols-4">
+            {homeStats.map((stat, index) => (
+              <motion.div key={stat.label} className="rounded-2xl border border-zinc-800/80 bg-zinc-900/60 p-[var(--space-4)] md:p-[var(--space-5)]" {...reveal(index)}>
+                <p className="text-4xl font-semibold tracking-tighter text-cyan-400 md:text-5xl">{stat.value}</p>
+                <p className="mt-2 text-sm leading-relaxed text-zinc-400">{stat.label}</p>
+              </motion.div>
+            ))}
+          </div>
+        </section>
+
         {/* ---------- Work preview ---------- */}
         <section className={sectionShell}>
           <div className="container mx-auto max-w-5xl">
             <SectionHeader
-              label="Work"
               title="Selected work"
               description="Shopify storefronts, web platforms and mobile apps I have built and contributed to."
               to="/work"
             />
-            <div className="grid gap-6 md:grid-cols-3">
+            <div className="grid gap-[var(--space-4)] md:gap-[var(--space-5)] md:grid-cols-3">
               {previewProjects.map((project, index) => (
                 <motion.a
                   key={project.title}
@@ -94,7 +113,7 @@ const Index = () => {
                       </div>
                     )}
                   </div>
-                  <div className="flex flex-1 flex-col p-6">
+                  <div className="flex flex-1 flex-col p-[var(--space-4)] md:p-[var(--space-5)]">
                     {project.period && <p className="text-xs text-zinc-500">{project.period}</p>}
                     <h3 className="mt-1 text-lg font-semibold tracking-tight text-white">{project.title}</h3>
                     <p className="mt-2 line-clamp-3 text-sm leading-relaxed text-zinc-400">{project.description}</p>
@@ -109,16 +128,76 @@ const Index = () => {
         <section className={sectionShell}>
           <div className="container mx-auto max-w-5xl">
             <SectionHeader
-              label="About"
               title="Frontend-focused developer"
               description="Frontend Software Developer with 3+ years of experience building modern web applications, Shopify storefronts and mobile apps."
               to="/about"
             />
-            <div className="grid gap-6 md:grid-cols-3">
+            <div className="grid gap-[var(--space-4)] md:gap-[var(--space-5)] md:grid-cols-3">
               {aboutHighlights.map((item, index) => (
-                <motion.div key={item.title} className="h-full rounded-2xl border border-zinc-800/80 bg-zinc-900/60 p-7" {...reveal(index)}>
+                <motion.div key={item.title} className="h-full rounded-2xl border border-zinc-800/80 bg-zinc-900/60 p-[var(--space-4)] md:p-[var(--space-5)]" {...reveal(index)}>
                   <h3 className="text-xl font-semibold tracking-tight text-white">{item.title}</h3>
                   <p className="mt-3 text-sm leading-relaxed text-zinc-400">{item.body}</p>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ---------- Skills preview ---------- */}
+        <section className={sectionShell}>
+          <div className="container mx-auto max-w-5xl">
+            <SectionHeader
+              title="Skills & expertise"
+              description="Frontend, e-commerce and mobile technologies used across my projects."
+              to="/about"
+            />
+            <div className="grid gap-[var(--space-4)] md:gap-[var(--space-5)] md:grid-cols-2">
+              {skillPreview.map((category, index) => (
+                <motion.div key={category.title} className="h-full rounded-2xl border border-zinc-800/80 bg-zinc-900/60 p-[var(--space-4)] md:p-[var(--space-5)]" {...reveal(index)}>
+                  <h3 className="mb-5 border-b border-zinc-800 pb-3 text-lg font-semibold tracking-tight text-white">
+                    {category.title}
+                  </h3>
+                  <div className="flex flex-wrap gap-2">
+                    {category.skills.slice(0, 6).map((skill) => (
+                      <span
+                        key={skill}
+                        className="rounded-full border border-zinc-700 bg-zinc-950 px-3 py-1.5 text-sm text-zinc-300 transition-colors duration-300 hover:border-cyan-400 hover:text-cyan-400"
+                      >
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ---------- Experience preview ---------- */}
+        <section className={sectionShell}>
+          <div className="container mx-auto max-w-5xl">
+            <SectionHeader
+              title="Where I've worked"
+              description="3+ years building web applications, Shopify storefronts and mobile apps."
+              to="/about"
+            />
+            <div className="grid gap-[var(--space-4)] md:gap-[var(--space-5)] md:grid-cols-2">
+              {experiencePreview.map((exp, index) => (
+                <motion.div key={exp.company} className="flex h-full flex-col rounded-2xl border border-zinc-800/80 bg-zinc-900/60 p-[var(--space-4)] md:p-[var(--space-5)]" {...reveal(index)}>
+                  <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
+                    <div>
+                      <h3 className="text-xl font-semibold tracking-tight text-white">{exp.role}</h3>
+                      <p className="mt-1 text-sm text-zinc-300">
+                        {exp.company} <span className="text-zinc-500">· {exp.location}</span>
+                      </p>
+                    </div>
+                    <span className="w-fit rounded-full border border-cyan-400/40 px-3 py-1 text-xs text-cyan-400">{exp.period}</span>
+                  </div>
+                  <ul className="mt-5 list-disc space-y-2 pl-5 text-sm leading-relaxed text-zinc-400">
+                    {exp.highlights.slice(0, 2).map((item, i) => (
+                      <li key={i}>{item}</li>
+                    ))}
+                  </ul>
                 </motion.div>
               ))}
             </div>
@@ -129,12 +208,11 @@ const Index = () => {
         <section className={sectionShell}>
           <div className="container mx-auto max-w-5xl">
             <SectionHeader
-              label="Connect"
               title="Let's talk"
               description="Reach me on LinkedIn, WhatsApp or email."
               to="/connect"
             />
-            <div className="grid gap-6 md:grid-cols-3">
+            <div className="grid gap-[var(--space-4)] md:gap-[var(--space-5)] md:grid-cols-3">
               {previewConnect.map((card, index) => (
                 <motion.a
                   key={card.label}

@@ -35,7 +35,7 @@ export default function Connect() {
       />
 
       {/* ---------- Social & direct contact cards ---------- */}
-      <section className="bg-[#09090b] px-4 py-24 md:py-32">
+      <section className="bg-[#09090b] px-4 py-[var(--space-8)]">
         <div className="container mx-auto max-w-5xl">
           <ConnectGrid />
 

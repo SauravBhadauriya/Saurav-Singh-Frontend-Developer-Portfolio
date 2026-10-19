@@ -18,12 +18,12 @@ export default function Navbar() {
 
   return (
     <motion.header
-      className="fixed inset-x-0 top-4 z-50 flex justify-center px-4 pointer-events-none"
+      className="site-container fixed inset-x-0 top-[var(--space-4)] z-50 pointer-events-none"
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.5 }}
     >
-      <div className="pointer-events-auto w-full max-w-5xl rounded-2xl md:rounded-full border border-zinc-800/80 bg-zinc-950/70 backdrop-blur-md shadow-lg shadow-black/30">
+      <div className="pointer-events-auto w-full rounded-2xl md:rounded-full border border-zinc-800/80 bg-zinc-950/70 backdrop-blur-md shadow-lg shadow-black/30">
         <div className="flex items-center justify-between px-6 py-3">
           <Link to="/" className="group flex items-center gap-2.5" aria-label="Saurav Dev, home">
             <span className="flex h-8 w-8 items-center justify-center rounded-lg border border-cyan-400/40 bg-cyan-400/10 transition-colors duration-300 group-hover:bg-cyan-400/20">
