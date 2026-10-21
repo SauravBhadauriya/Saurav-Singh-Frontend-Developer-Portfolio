@@ -26,7 +26,7 @@ const homeStats = [
 const skillPreview = skillCategories.slice(0, 4);
 const experiencePreview = experiences.slice(0, 2);
 
-const previewConnect = ["LinkedIn", "WhatsApp", "Email"].map((label) => connectCards.find((card) => card.label === label)!);
+const previewConnect = ["LinkedIn", "GitHub", "Email"].map((label) => connectCards.find((card) => card.label === label)!);
 
 const sectionShell = "border-t border-zinc-900 bg-[#09090b] px-4 py-[var(--space-8)]";
 
@@ -210,7 +210,7 @@ const Index = () => {
           <div className="container mx-auto max-w-5xl">
             <SectionHeader
               title="Let's talk"
-              description="Reach me on LinkedIn, WhatsApp or email."
+              description="Reach me on LinkedIn, GitHub or email."
               to="/connect"
             />
             <div className="grid gap-[var(--space-4)] md:gap-[var(--space-5)] md:grid-cols-3">
